@@ -26,10 +26,10 @@ public class BuildPC {
 	private float prezzoTotale;
 	
 	@OneToMany
-	private List<Componenti> componenti;
+	private List<Componente> componenti;
 	
 	@OneToMany
-	private List<Periferiche> periferiche;
+	private List<Periferica> periferiche;
 
 	public Long getId() {
 		return id;
@@ -63,19 +63,19 @@ public class BuildPC {
 		this.prezzoTotale = prezzoTotale;
 	}
 
-	public List<Componenti> getComponenti() {
+	public List<Componente> getComponenti() {
 		return componenti;
 	}
 
-	public void setComponenti(List<Componenti> componenti) {
+	public void setComponenti(List<Componente> componenti) {
 		this.componenti = componenti;
 	}
 
-	public List<Periferiche> getPeriferiche() {
+	public List<Periferica> getPeriferiche() {
 		return periferiche;
 	}
 
-	public void setPeriferiche(List<Periferiche> periferiche) {
+	public void setPeriferiche(List<Periferica> periferiche) {
 		this.periferiche = periferiche;
 	}
 	
