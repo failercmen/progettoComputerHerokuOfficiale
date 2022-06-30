@@ -71,13 +71,13 @@ public class Credenziali {
 		this.utente = utente;
 	}
 
-//	public static String getDefaultRole() {
-//		return DEFAULT_ROLE;
-//	}
-//
-//	public static String getAdminRole() {
-//		return ADMIN_ROLE;
-//	}
+	public static String getDefaultRole() {
+		return DEFAULT_ROLE;
+	}
+
+	public static String getAdminRole() {
+		return ADMIN_ROLE;
+	}
 
 	
 	
