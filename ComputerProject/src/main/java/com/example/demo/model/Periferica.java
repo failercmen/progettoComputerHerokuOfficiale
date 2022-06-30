@@ -7,8 +7,8 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-public class Componenti {
-	
+public class Periferica {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -16,11 +16,8 @@ public class Componenti {
 	@NotBlank //no spazi vuoti o bianchi
 	private String nome;
 	
-	@NotBlank 
-	private String descrizione;
-	
 	@NotBlank
-	private String tipologia;
+	private String descrizione;
 	
 	@NotBlank
 	private float prezzo;
@@ -49,14 +46,6 @@ public class Componenti {
 		this.descrizione = descrizione;
 	}
 
-	public String getTipologia() {
-		return tipologia;
-	}
-
-	public void setTipologia(String tipologia) {
-		this.tipologia = tipologia;
-	}
-
 	public float getPrezzo() {
 		return prezzo;
 	}
@@ -64,7 +53,6 @@ public class Componenti {
 	public void setPrezzo(float prezzo) {
 		this.prezzo = prezzo;
 	}
-
 	
 	
 }

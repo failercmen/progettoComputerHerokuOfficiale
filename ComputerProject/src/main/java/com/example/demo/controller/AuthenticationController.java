@@ -44,9 +44,9 @@ public class AuthenticationController {
 
 			credenziali.setUtente(utente);
 			this.CredenzialiService.saveCredentials(credenziali);
-			return "registrazioneEffettuata"; //TODO ritorna la pagina principale di successo
+			return "registrazioneEffettuata.html"; 
 		}
-		return "register"; 
+		return "registerForm.html"; 
 	}
 
 
@@ -56,7 +56,7 @@ public class AuthenticationController {
 	public String showRegisterForm (Model model) {
 		model.addAttribute("utente", new Utente());
 		model.addAttribute("credenziali", new Credenziali());
-		return "register";
+		return "registerForm.html";
 	}
 	//	
 	@GetMapping("/login")
@@ -67,24 +67,23 @@ public class AuthenticationController {
 
 	@GetMapping("/logout")
 	public String logout(Model model) {
-		return "index";
+		return "index.html";
 	}
 
 	@GetMapping("/default")
 	public String defaultAfterLogin(Model model) {
-
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		Credenziali credentials = CredenzialiService.getCredentials(userDetails.getUsername());
 		if (credentials.getRuolo().equals(Credenziali.ADMIN_ROLE)) {
-			return "admin/home";
+			return "admin/home.html";
 		}
-		return "home";
+		return "home.html";
 	}
 
-	
+	//pagina di fallimento di autenticazione
 	@GetMapping("/failure")
 	public String errorLogin(Model model){
-		return "failure";
+		return "failure.html";
 	}
 
 
