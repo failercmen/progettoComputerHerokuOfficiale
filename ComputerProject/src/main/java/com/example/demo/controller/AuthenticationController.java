@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -34,7 +32,7 @@ public class AuthenticationController {
 
 
 	@PostMapping("/register")
-	public String registerUser(@Valid @ModelAttribute("utente")Utente utente,BindingResult utenteBindingResult,@Valid @ModelAttribute("credenziali") Credenziali credenziali,
+	public String registerUser(@ModelAttribute("utente")Utente utente,BindingResult utenteBindingResult,@ModelAttribute("credenziali") Credenziali credenziali,
 			BindingResult credenzialiBindingResult, Model model) {
 
 		this.UtenteValidator.validate(utente, utenteBindingResult);// per il controllo dei duplicati---bindingResult ha tutti gli errori

@@ -1,0 +1,95 @@
+#content{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items: center;
+	height: 100vh;
+}
+
+.box{
+	position:relative;
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+	justify-content: center;
+	background-color: #043c64;
+	opacity: 0.9;
+	border: 5px solid #043c64;
+	width:500px;
+	height:360px;
+	border-radius: 20px;
+}
+
+img{
+	position:absolute;
+	width:25%;
+	bottom:320px;
+}
+
+h2{
+	font-family: 'Audiowide';
+}
+
+.username{
+	margin-bottom:10px;
+}
+
+/*
+.nome input{
+	width: 130%;
+	margin-left: -30px; 
+}
+*/
+/*
+.carattere{
+	position: relative;
+	right: 29px;
+}
+*/
+
+span{
+	font-family: 'Share Tech';
+	font-size: 20px;
+}
+.error{
+	font-size: 15px;
+}
+
+input{
+	border: 2px solid white;
+	background-color: white;
+	height:25px;
+	width:100%;
+	border-radius:10px;
+}
+
+.submit{
+		display:flex;
+	flex-direction:column;
+	align-items: center;
+}
+
+button{
+	font-family: 'Audiowide';
+	margin-top: 20px;
+	background-color: white;
+	padding: -25px;
+}
+
+button:hover{
+	background-color: lightgreen;
+	transform: scale(1.1);
+    transition-duration: 0.4s;
+}
+
+p{
+	font-family: 'Share Tech';
+}
+
+#myVideo{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	z-index: -1;
+}
