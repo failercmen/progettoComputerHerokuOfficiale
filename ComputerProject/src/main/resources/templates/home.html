@@ -4,23 +4,33 @@
     <title>Titolo Pagina</title>
     <style></style>
     <script></script>
+    <link rel="stylesheet" href="/css/home.css">
   </head>
-  <body>
+  <body>  
+	<h1>NOME DELL'AZIENDA</h1>
+	<div class="slider-frame">
+		<div class="slide-images">
+			<div class="img-container">
+				<img src="images/Monitor.png">
+			</div>
+			<div class="img-container">
+				<img src="images/Monitor.png">
+			</div>
+			<div class="img-container">
+				<img src="images/Monitor.png">
+			</div>
+		</div>
+	</div>
+          
+          
     
-   <div class ="titolo">
-          <h1>NOME DELL'AZIENDA</h1>
-    </div>
     
- 
-  
     
-   	<hr>
-   		<footer>
-          <a th:href="@{/home}">Home Utente</a>
-   			
-		<a th:href="@{/logout}">Logout</a>
-   			
-   		</footer>
+    
+<footer>
+<a th:href="@{/home}">Home Utente</a>	
+<a th:href="@{/logout}">Logout</a>  			
+</footer>
       
   </body>
 </html>
