@@ -1,75 +1,70 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>SIW</title>
+<title>registerForm</title>
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+</style>
+<link href="/css/registerForm.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<video autoplay muted loop id="myVideo">
+		<source src="/images/circuiti.mp4" type="video/mp4">
+	</video>
 
 
-	<h2>
-		SE NON SEI REGISTRATO, <em>REGISTRATI!!!</em>
-	</h2>
+	<div id="content">
 
+		<form th:action="@{/register}" method="POST">
 
-	<div id="flex-container">
+			<div class="box">
+				<img src="/images/Utente.png">
+				<h2>REGISTRA UTENTE</h2>
+				<div class="nome">
+					<span class="carattere">Nome:</span> <input type="text"
+						placeholder="nome" required th:field="${utente.nome}" /> <span
+						class="error" th:if="${#fields.hasErrors('utente.nome')}"
+						th:errors="${utente.nome}" th:style="'color:red'"></span>
+				</div>
 
+				<div class="cognome">
+					<span>Cognome:</span> <input type="text" placeholder="cognome"
+						required th:field="${utente.cognome}" /> <span class="error"
+						th:if="${#fields.hasErrors('utente.cognome')}"
+						th:errors="${utente.cognome}" th:style="'color:red'"></span>
+				</div>
 
-		<div class="flex-item2">
+				<div class="username">
+					<span>Username:</span> <input type="text" placeholder="username"
+						required th:field="${credenziali.username}" /> <span
+						class="error" th:if="${#fields.hasErrors('credenziali.username')}"
+						th:errors="${credenziali.username}" th:style="'color:red'"></span>
+				</div>
 
-			<h3>REGISTRA UTENTE</h3>
-
-
-			<form th:action="@{/register}" method="POST">
-
-				<div id="box">
-
-
-					<div class="nome">
-						<span>Nome:</span> <span><input type="text"
-							placeholder="nome" required th:field="${utente.nome}" /></span> <span
-							th:if="${#fields.hasErrors('utente.nome')}"
-							th:errors="${utente.nome}" th:style="'color:red'"></span>
-
-					</div>
-
-
-					<div class="cognome">
-						<span>Cognome:</span> <span><input type="text"
-							placeholder="cognome" required th:field="${utente.cognome}" /></span> <span
-							th:if="${#fields.hasErrors('utente.cognome')}"
-							th:errors="${utente.cognome}" th:style="'color:red'"></span>
-
-					</div>
-
-					<div class="username">
-						<span>Username:</span> <span><input type="text"
-							placeholder="username" required
-							th:field="${credenziali.username}" /> </span> <span
-							th:if="${#fields.hasErrors('credenziali.username')}"
-							th:errors="${credenziali.username}" th:style="'color:red'"></span>
-					</div>
-
-					<div class="password">
-						<span>Password:</span> <span><input type="password"
-							placeholder="password" required
-							th:field="${credenziali.password}" /> </span> <span
-							th:if="${#fields.hasErrors('${credenziali.password}')}"
-							th:errors="${credenziali.password}" th:style="'color:red'"></span>
-
-					</div>
-
-					<div>
-						<button type="submit">Registra</button>
-					</div>
+				<div class="password">
+					<span>Password:</span> <input type="password"
+						placeholder="password" required th:field="${credenziali.password}" />
+					<span class="error"
+						th:if="${#fields.hasErrors('${credenziali.password}')}"
+						th:errors="${credenziali.password}" th:style="'color:red'"></span>
 
 				</div>
 
-			</form>
+				<div>
+					<button type="submit">Registra</button>
+				</div>
 
-		</div>
+			</div>
+
+		</form>
 
 	</div>
-
 
 </body>
 </html>
