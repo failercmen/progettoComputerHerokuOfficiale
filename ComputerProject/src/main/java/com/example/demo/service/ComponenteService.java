@@ -60,5 +60,16 @@ public class ComponenteService {
 			componenteRepository.deleteById(id);
 		}
 		
+		@Transactional
+		public List<Componente> caseComponenti(Long id) {
+			List<Componente> listaCase = this.tutti();
+			
+			for(Componente c : listaCase) {
+				if(!c.getTipologia().equals("case"))
+					listaCase.remove(c);
+			}
+			return listaCase;
+		}
+		
 }
 	
