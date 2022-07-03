@@ -89,3 +89,8 @@ buildNumber.properties
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,maven
 /.metadata/
 /.metadata/
+
+<<<<<<< Updated upstream
+application.properties
+=======
+>>>>>>> Stashed changes
