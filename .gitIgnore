@@ -90,4 +90,7 @@ buildNumber.properties
 /.metadata/
 /.metadata/
 
+<<<<<<< Updated upstream
 application.properties
+=======
+>>>>>>> Stashed changes
