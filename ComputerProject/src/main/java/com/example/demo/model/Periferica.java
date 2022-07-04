@@ -21,6 +21,8 @@ public class Periferica {
 
 	@NotBlank
 	private String tipologia;
+	
+	private float prezzo;
 
 	public String getTipologia() {
 		return tipologia;
@@ -30,8 +32,6 @@ public class Periferica {
 		this.tipologia = tipologia;
 	}
 
-	@NotBlank
-	private float prezzo;
 
 	public Long getId() {
 		return id;

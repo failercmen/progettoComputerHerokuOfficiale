@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="widht=device-widht, initial-scale=1">
+<title>SitoPc</title>
+<link href="/css/ListaPerifericheAdmin.css" rel="stylesheet"
+	type="text/css">
+<style>
+@import url('');
+</style>
+<script></script>
+</head>
+<body>
+	<div class="listaCompleta">
+		<span id="tipologie" th:each="periferica : ${listaPeriferiche}">
+			<span class="nomePeriferica"><a href="Periferica.html"
+				th:href="@{'/periferica + '/' + ${periferica.id}}"
+				th:text="${periferica.tipologia}">Tipologia periferica</a> </span> <!-- <span class = "elimina">
+               	  <a th:href="@{'/admin/cancellaChef' + '/' + ${chef.id}}">Elimina</a>
+               </span> -->
+		</span>
+	</div>
+</body>
+</html>
