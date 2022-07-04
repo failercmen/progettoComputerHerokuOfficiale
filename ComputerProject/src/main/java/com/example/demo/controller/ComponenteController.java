@@ -38,32 +38,32 @@ public class ComponenteController {
 	}
 
 	@RequestMapping(value = "/admin/componente", method = RequestMethod.GET)
-	public String addChef(Model model) {
+	public String addComponente(Model model) {
 		model.addAttribute("componente", new Componente());
-		return "componenteForm.html";
+		return "admin/componenteForm.html";
 	}
 
 	@RequestMapping(value = "/admin/componente", method = RequestMethod.POST)
-	public String addChef(@ModelAttribute("componente") Componente componente, Model model,
+	public String addComponente(@ModelAttribute("componente") Componente componente, Model model,
 			BindingResult bindingResult) {
 		this.componenteValidator.validate(componente, bindingResult);
 		if (!bindingResult.hasErrors()) {
 			this.componenteService.inserisci(componente);
 			model.addAttribute("listaComponenti", this.componenteService.tutti());
-			return "listaComponenti.html";
+			return "admin/listaComponenti.html";
 		}
-		return "componenteForm.html";
+		return "admin/componenteForm.html";
 	}
 
 	@RequestMapping(value = "/componente/{id}", method = RequestMethod.GET)
-	public String getChef(@PathVariable("id") Long id, Model model) {
+	public String getComponente(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("componente", this.componenteService.componentePerId(id));
 		return "componente.html";
 	}
 
 	@Transactional
 	@GetMapping("/deleteComponente/{id}")
-	public String deleteIngrediente(@PathVariable("id") Long id, Model model) {
+	public String deleteComponente(@PathVariable("id") Long id, Model model) {
 
 		Componente c = componenteService.componentePerId(id);
 

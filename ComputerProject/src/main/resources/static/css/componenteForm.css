@@ -1,12 +1,16 @@
-#content{
+body{
+	background-color: #e6ecf0;
+}
+
+#checkBox{
 	display:flex;
 	flex-direction:column;
 	justify-content:center;
 	align-items: center;
-	height: 100vh;
+	height: 80vh;
 }
 
-.box{
+#box{
 	position:relative;
 	display:flex;
 	flex-direction:column;
@@ -20,39 +24,30 @@
 	border-radius: 20px;
 }
 
-img{
-	position:absolute;
-	width:25%;
-	bottom:320px;
-}
-
-h2{
+h1{
 	font-family: 'Audiowide';
+	text-align: center;
 }
 
-.username{
-	margin-bottom:10px;
+.boxNome{
+	width: 50%;
 }
 
-/*
-.nome input{
-	width: 130%;
-	margin-left: -30px; 
+.boxDesc{
+	width: 50%;
 }
-*/
-/*
-.carattere{
-	position: relative;
-	right: 29px;
+
+.boxTipo{
+	width: 50%;
 }
-*/
+
+.boxPrezzo{
+	width: 50%;
+}
 
 span{
 	font-family: 'Share Tech';
 	font-size: 20px;
-}
-.error{
-	font-size: 15px;
 }
 
 input{
@@ -84,12 +79,4 @@ button:hover{
 
 p{
 	font-family: 'Share Tech';
-}
-
-#myVideo{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	z-index: -1;
 }

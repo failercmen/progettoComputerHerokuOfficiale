@@ -56,7 +56,7 @@ public class PerifericaController {
     }
     
     @RequestMapping(value = "/periferica/{id}", method = RequestMethod.GET)
-    public String getChef(@PathVariable("id") Long id, Model model) {
+    public String getPeriferica(@PathVariable("id") Long id, Model model) {
     	model.addAttribute("periferica", this.perifericaService.perifericaPerId(id));
     	return "Periferica.html";
     }

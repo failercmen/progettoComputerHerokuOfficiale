@@ -14,8 +14,12 @@ header {
 	background-color: #043c64;
 }
 
-header img {
-	width: 13%;
+header a {
+	width: 12%;
+}
+
+header img{
+	width: 100%;
 }
 
 h1 {
