@@ -22,7 +22,7 @@ public class Componente {
 	@NotBlank
 	private String tipologia;
 	
-	@NotBlank
+	
 	private float prezzo;
 
 	public Long getId() {

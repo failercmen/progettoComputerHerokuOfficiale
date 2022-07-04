@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>componente Form</title>
+<link rel="stylesheet" href="/css/genericForm.css" type="text/css" />
+</head>
+<body>
+
+
+	<h2>Inserisci i dati di un componente</h2>
+
+
+
+	<form th:action="@{/admin/componente}" method="POST"
+		th:object="${componente}">
+
+		<div>
+			<div>
+				Nome:<input type="text" th:field="*{nome}" />
+
+			</div>
+			<div>
+				descrizione:<input type="text" th:field="*{descrizione}" />
+
+			</div>
+
+			<div>
+				Prezzo:<input type="number" th:field="*{prezzo}" />
+			</div>
+
+			<div>
+				<button type="submit">Conferma Componente</button>
+			</div>
+		</div>
+	</form>
+
+
+
+	<hr>
+
+	<footer>
+		<a th:href="@{/admin/home}">Home Amministratore</a>
+
+
+	</footer>
+
+
+</body>
+</html>
