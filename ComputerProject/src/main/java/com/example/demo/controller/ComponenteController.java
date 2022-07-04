@@ -31,16 +31,28 @@ public class ComponenteController {
 		return "listaComponenti.html";
 	}
 	
+	/*--------------------------------------------------------------------------*/
+	
 	@RequestMapping(value = "/admin/componenti", method = RequestMethod.GET)
 	public String getListaComponentiAdmin(Model model) {
-		model.addAttribute("listaComponenti", this.componenteService.tutti());
+		
+		model.addAttribute("listaCase", this.componenteService.caseComponenti());
+		model.addAttribute("listaSchedeVideo", this.componenteService.schedaVideoComponenti());
+		model.addAttribute("listaSchedeMadri", this.componenteService.schedaMadreComponenti());
+		model.addAttribute("listaCpu", this.componenteService.cpuComponenti());
+		model.addAttribute("listaRam", this.componenteService.ramComponenti());
+		model.addAttribute("listaAlimentatori", this.componenteService.alimentatoreComponenti());
+		model.addAttribute("listaCooling", this.componenteService.coolingComponenti());
+		model.addAttribute("listaMemorie", this.componenteService.memorieComponenti());		
 		return "admin/listaComponenti.html";
 	}
+	
+	/*--------------------------------------------------------------------------*/
 
 	@RequestMapping(value = "/admin/componente", method = RequestMethod.GET)
 	public String addChef(Model model) {
 		model.addAttribute("componente", new Componente());
-		return "componenteForm.html";
+		return "/admin/componenteForm.html";
 	}
 
 	@RequestMapping(value = "/admin/componente", method = RequestMethod.POST)
@@ -49,10 +61,18 @@ public class ComponenteController {
 		this.componenteValidator.validate(componente, bindingResult);
 		if (!bindingResult.hasErrors()) {
 			this.componenteService.inserisci(componente);
-			model.addAttribute("listaComponenti", this.componenteService.tutti());
-			return "listaComponenti.html";
+			
+			model.addAttribute("listaCase", this.componenteService.caseComponenti());
+			model.addAttribute("listaSchedeVideo", this.componenteService.schedaVideoComponenti());
+			model.addAttribute("listaSchedeMadri", this.componenteService.schedaMadreComponenti());
+			model.addAttribute("listaCpu", this.componenteService.cpuComponenti());
+			model.addAttribute("listaRam", this.componenteService.ramComponenti());
+			model.addAttribute("listaAlimentatori", this.componenteService.alimentatoreComponenti());
+			model.addAttribute("listaCooling", this.componenteService.coolingComponenti());
+			model.addAttribute("listaMemorie", this.componenteService.memorieComponenti());	
+			return "/admin/listaComponenti.html";
 		}
-		return "componenteForm.html";
+		return "/admin/componenteForm.html";
 	}
 
 	@RequestMapping(value = "/componente/{id}", method = RequestMethod.GET)
