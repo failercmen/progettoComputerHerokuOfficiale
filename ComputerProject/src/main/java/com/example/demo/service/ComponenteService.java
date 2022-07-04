@@ -82,25 +82,99 @@ public class ComponenteService {
 	}
 
 	@Transactional
-	public List<Componente> caseComponenti(Long id) {
-		List<Componente> listaCase = this.tutti();
+	public List<Componente> caseComponenti() {
+		List<Componente> lista = this.tutti();
+		List<Componente> risultato = new ArrayList<Componente>();
 
-		for (Componente c : listaCase) {
-			if (!c.getTipologia().equals("case"))
-				listaCase.remove(c);
+		for (Componente c : lista) {
+			if (c.getTipologia().equals("case"))
+				risultato.add(c);
 		}
-		return listaCase;
+		return risultato;
 	}
 
 	@Transactional
-	public List<Componente> schedaVideoComponenti(Long id) {
-		List<Componente> listaSV = this.tutti();
+	public List<Componente> schedaVideoComponenti() {
+		List<Componente> lista = this.tutti();
+		List<Componente> risultato = new ArrayList<Componente>();
 
-		for (Componente c : listaSV) {
-			if (!c.getTipologia().equals("scheda video"))
-				listaSV.remove(c);
+		for (Componente c : lista) {
+			if (c.getTipologia().equals("scheda video"))
+				risultato.add(c);
 		}
-		return listaSV;
+		return risultato;
+	}
+	
+	@Transactional
+	public List<Componente> schedaMadreComponenti() {
+		List<Componente> lista = this.tutti();
+		List<Componente> risultato = new ArrayList<Componente>();
+
+		for (Componente c : lista) {
+			if (c.getTipologia().equals("scheda madre"))
+				risultato.add(c);
+		}
+		return risultato;
+	}
+	
+	@Transactional
+	public List<Componente> cpuComponenti() {
+		List<Componente> lista = this.tutti();
+		List<Componente> risultato = new ArrayList<Componente>();
+
+		for (Componente c : lista) {
+			if (c.getTipologia().equals("cpu"))
+				risultato.add(c);
+		}
+		return risultato;
+	}
+	
+	@Transactional
+	public List<Componente> ramComponenti() {
+		List<Componente> lista = this.tutti();
+		List<Componente> risultato = new ArrayList<Componente>();
+
+		for (Componente c : lista) {
+			if (c.getTipologia().equals("ram"))
+				risultato.add(c);
+		}
+		return risultato;
+	}
+	
+	@Transactional
+	public List<Componente> alimentatoreComponenti() {
+		List<Componente> lista = this.tutti();
+		List<Componente> risultato = new ArrayList<Componente>();
+
+		for (Componente c : lista) {
+			if (c.getTipologia().equals("alimentatore"))
+				risultato.add(c);
+		}
+		return risultato;
+	}
+	
+	@Transactional
+	public List<Componente> coolingComponenti() {
+		List<Componente> lista = this.tutti();
+		List<Componente> risultato = new ArrayList<Componente>();
+
+		for (Componente c : lista) {
+			if (c.getTipologia().equals("cooling"))
+				risultato.add(c);
+		}
+		return risultato;
+	}
+	
+	@Transactional
+	public List<Componente> memorieComponenti() {
+		List<Componente> lista = this.tutti();
+		List<Componente> risultato = new ArrayList<Componente>();
+
+		for (Componente c : lista) {
+			if (c.getTipologia().equals("memoria"))
+				risultato.add(c);
+		}
+		return risultato;
 	}
 
 }
