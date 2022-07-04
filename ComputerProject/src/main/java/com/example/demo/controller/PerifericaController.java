@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.controller.validator.PerifericaValidator;
 import com.example.demo.model.Periferica;
-import com.example.demo.service.BuildPCService;
+
 import com.example.demo.service.PerifericaService;
 
 

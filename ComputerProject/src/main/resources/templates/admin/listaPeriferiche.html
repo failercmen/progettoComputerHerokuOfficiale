@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="widht=device-widht, initial-scale=1">
 <title>Catering</title>
-<link href="/css/listaPerifericheAdmin.css" rel="stylesheet"
+<link href="/css/ListaPerifericheAdmin.css" rel="stylesheet"
 	type="text/css">
 <style>
 @import
@@ -18,7 +18,7 @@
 </head>
 <body>
 	<header>
-		<a th:href="@{/admin/home}"><img src="/images/logo.png"></a>
+		<img src="/images/logo.png">
 		<div class="titolo">
 			<h1>OFFLINESTORE</h1>
 		</div>
@@ -28,13 +28,9 @@
 		</div>
 	</header>
 	<div class="centralBox">
-<<<<<<< HEAD
-		<div class="periferica">
-=======
 	
 	
 		<div class="componente">
->>>>>>> 2bb495d1af5ea54a044629200316101d4d2ee2e7
 			<h3>Display</h3>
 			<div th:if="${listaDisplay != null}" >
 				<div th:each="display : ${listaDisplay}">
@@ -48,14 +44,10 @@
 			</div>
 			<div th:unless="${listaDisplay}">Nessun display</div>
 		</div>
-<<<<<<< HEAD
-		<div class="periferica">
-=======
 
 
  
 		<div class="componente">
->>>>>>> 2bb495d1af5ea54a044629200316101d4d2ee2e7
 			<h3>Tastiere</h3>
 			<div th:if="${listaTastiere}">
 				<div th:each="tastiera : ${listaTastiere}">
@@ -68,13 +60,6 @@
 			</div>
 			<div th:unless="${listaDisplay}">Nessun display</div>
 		</div>
-<<<<<<< HEAD
-		<div class="periferica">
-			<h3>Mouse</h3>
-		</div>
-		<div class="periferica">
-			<h3>Cuffie</h3>
-=======
 
 
 	
@@ -86,7 +71,6 @@
 				th:href="@{'/periferica' + '/' + ${mouse.id}}"
 				th:text="${mouse.nome}">Nome Mouse</a>
 
->>>>>>> 2bb495d1af5ea54a044629200316101d4d2ee2e7
 		</div>
 
 	</div>

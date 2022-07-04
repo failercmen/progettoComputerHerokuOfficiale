@@ -30,12 +30,12 @@ public class ComponenteController {
 		model.addAttribute("listaComponenti", this.componenteService.tutti());
 		return "listaComponenti.html";
 	}
-	
+
 	/*--------------------------------------------------------------------------*/
-	
+
 	@RequestMapping(value = "/admin/componenti", method = RequestMethod.GET)
 	public String getListaComponentiAdmin(Model model) {
-		
+
 		model.addAttribute("listaCase", this.componenteService.caseComponenti());
 		model.addAttribute("listaSchedeVideo", this.componenteService.schedaVideoComponenti());
 		model.addAttribute("listaSchedeMadri", this.componenteService.schedaMadreComponenti());
@@ -43,20 +43,18 @@ public class ComponenteController {
 		model.addAttribute("listaRam", this.componenteService.ramComponenti());
 		model.addAttribute("listaAlimentatori", this.componenteService.alimentatoreComponenti());
 		model.addAttribute("listaCooling", this.componenteService.coolingComponenti());
-		model.addAttribute("listaMemorie", this.componenteService.memorieComponenti());		
+		model.addAttribute("listaMemorie", this.componenteService.memorieComponenti());
 		return "admin/listaComponenti.html";
 	}
-	
+
 	/*--------------------------------------------------------------------------*/
 
 	@RequestMapping(value = "/admin/componente", method = RequestMethod.GET)
 	public String addComponente(Model model) {
 		model.addAttribute("componente", new Componente());
-<<<<<<< HEAD
+
 		return "admin/componenteForm.html";
-=======
-		return "/admin/componenteForm.html";
->>>>>>> 2bb495d1af5ea54a044629200316101d4d2ee2e7
+
 	}
 
 	@RequestMapping(value = "/admin/componente", method = RequestMethod.POST)
@@ -65,13 +63,9 @@ public class ComponenteController {
 		this.componenteValidator.validate(componente, bindingResult);
 		if (!bindingResult.hasErrors()) {
 			this.componenteService.inserisci(componente);
-<<<<<<< HEAD
+
 			model.addAttribute("listaComponenti", this.componenteService.tutti());
-			return "admin/listaComponenti.html";
-		}
-		return "admin/componenteForm.html";
-=======
-			
+
 			model.addAttribute("listaCase", this.componenteService.caseComponenti());
 			model.addAttribute("listaSchedeVideo", this.componenteService.schedaVideoComponenti());
 			model.addAttribute("listaSchedeMadri", this.componenteService.schedaMadreComponenti());
@@ -79,11 +73,11 @@ public class ComponenteController {
 			model.addAttribute("listaRam", this.componenteService.ramComponenti());
 			model.addAttribute("listaAlimentatori", this.componenteService.alimentatoreComponenti());
 			model.addAttribute("listaCooling", this.componenteService.coolingComponenti());
-			model.addAttribute("listaMemorie", this.componenteService.memorieComponenti());	
+			model.addAttribute("listaMemorie", this.componenteService.memorieComponenti());
 			return "/admin/listaComponenti.html";
 		}
 		return "/admin/componenteForm.html";
->>>>>>> 2bb495d1af5ea54a044629200316101d4d2ee2e7
+
 	}
 
 	@RequestMapping(value = "/componente/{id}", method = RequestMethod.GET)
@@ -98,12 +92,12 @@ public class ComponenteController {
 
 		Componente c = componenteService.componentePerId(id);
 
-		//TODO vedi se rimuovere
+		// TODO vedi se rimuovere
 		// usato per eliminare l'ingrediente da ogni piatto in cui è presente
 		for (BuildPC b : componenteService.buildDiComponente(c)) {
 			b.getComponenti().remove(c);
 		}
-	
+
 		// cancellazione ingrediente
 		componenteService.deleteById(id);
 		model.addAttribute("listaComponenti", this.componenteService.tutti());
