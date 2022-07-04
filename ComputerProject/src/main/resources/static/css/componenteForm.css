@@ -1,0 +1,82 @@
+body{
+	background-color: #e6ecf0;
+}
+
+#checkBox{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items: center;
+	height: 80vh;
+}
+
+#box{
+	position:relative;
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+	justify-content: center;
+	background-color: #043c64;
+	opacity: 0.9;
+	border: 5px solid #043c64;
+	width:500px;
+	height:360px;
+	border-radius: 20px;
+}
+
+h1{
+	font-family: 'Audiowide';
+	text-align: center;
+}
+
+.boxNome{
+	width: 50%;
+}
+
+.boxDesc{
+	width: 50%;
+}
+
+.boxTipo{
+	width: 50%;
+}
+
+.boxPrezzo{
+	width: 50%;
+}
+
+span{
+	font-family: 'Share Tech';
+	font-size: 20px;
+}
+
+input{
+	border: 2px solid white;
+	background-color: white;
+	height:25px;
+	width:100%;
+	border-radius:10px;
+}
+
+.submit{
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+}
+
+button{
+	font-family: 'Audiowide';
+	margin-top: 20px;
+	background-color: white;
+	padding: -25px;
+}
+
+button:hover{
+	background-color: lightgreen;
+	transform: scale(1.1);
+    transition-duration: 0.4s;
+}
+
+p{
+	font-family: 'Share Tech';
+}
