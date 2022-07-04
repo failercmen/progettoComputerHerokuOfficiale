@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.controller.validator.PerifericaValidator;
 import com.example.demo.model.Periferica;
+import com.example.demo.service.BuildPCService;
 import com.example.demo.service.PerifericaService;
 
 
@@ -29,14 +30,32 @@ public class PerifericaController {
     @RequestMapping(value = "/periferiche", method = RequestMethod.GET)
     public String getListaPeriferiche(Model model) {
     		model.addAttribute("listaPeriferiche", this.perifericaService.tutti());
+    		
+    		model.addAttribute("listaDisplay",this.perifericaService.displayPeriferiche());
+    		model.addAttribute("listaCuffie",this.perifericaService.cuffiePeriferiche());
+    		model.addAttribute("listaMouse",this.perifericaService.mousePeriferiche());
+    		model.addAttribute("listaTastiere",this.perifericaService.tastierePeriferiche());
+    		model.addAttribute("listaExtra",this.perifericaService.extraPeriferiche());
     		return "listaPeriferiche.html";
     }
     
+
+    
     @RequestMapping(value = "/admin/periferiche", method = RequestMethod.GET)
     public String getListaPerifericheAdmin(Model model) {
-    		model.addAttribute("listaPeriferiche", this.perifericaService.tutti());
+//    		model.addAttribute("listaPeriferiche", this.perifericaService.tutti());
+    		
+    		model.addAttribute("listaDisplay",this.perifericaService.displayPeriferiche());
+    		model.addAttribute("listaCuffie",this.perifericaService.cuffiePeriferiche());
+    		model.addAttribute("listaMouse",this.perifericaService.mousePeriferiche());
+    		model.addAttribute("listaTastiere",this.perifericaService.tastierePeriferiche());
+    		model.addAttribute("listaExtra",this.perifericaService.extraPeriferiche());
+    		
     		return "admin/listaPeriferiche.html";
     }
+   
+    
+    
     
     @RequestMapping(value = "/admin/periferica", method = RequestMethod.GET)
     public String addPeriferica(Model model) {
@@ -49,9 +68,19 @@ public class PerifericaController {
     	this.perifericaValidator.validate(periferica, bindingResult);
         if (!bindingResult.hasErrors()) {
         	this.perifericaService.inserisci(periferica);
-            model.addAttribute("listaPeriferiche", this.perifericaService.tutti());
+//            model.addAttribute("listaPeriferiche", this.perifericaService.tutti());
+        	model.addAttribute("listaDisplay",this.perifericaService.displayPeriferiche());
+    		model.addAttribute("listaCuffie",this.perifericaService.cuffiePeriferiche());
+    		model.addAttribute("listaMouse",this.perifericaService.mousePeriferiche());
+    		model.addAttribute("listaTastiere",this.perifericaService.tastierePeriferiche());
+    		model.addAttribute("listaExtra",this.perifericaService.extraPeriferiche());
             return "admin/listaPeriferiche.html";
         }
+    	model.addAttribute("listaDisplay",this.perifericaService.displayPeriferiche());
+		model.addAttribute("listaCuffie",this.perifericaService.cuffiePeriferiche());
+		model.addAttribute("listaMouse",this.perifericaService.mousePeriferiche());
+		model.addAttribute("listaTastiere",this.perifericaService.tastierePeriferiche());
+		model.addAttribute("listaExtra",this.perifericaService.extraPeriferiche());
         return "admin/perifericaForm.html";
     }
     

@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +17,7 @@ public class PerifericaService {
 
 	@Autowired
 	private PerifericaRepository perifericaRepository; 
-	
+
 	@Transactional
 	public Periferica inserisci(Periferica p) {
 		return perifericaRepository.save(p);
@@ -44,11 +45,87 @@ public class PerifericaService {
 		else 
 			return false;
 	}
-				
+
+
+	@Transactional
+	public void deleteById(Long id) {
+		perifericaRepository.deleteById(id);
+	}
+	
+	
+	@Transactional
+	public List<Periferica> displayPeriferiche() {
 		
-		@Transactional
-		public void deleteById(Long id) {
-			perifericaRepository.deleteById(id);
+		List<Periferica> listaPeriferica = this.tutti();
+		
+		List<Periferica> listaPeriferica2 = new ArrayList<Periferica>();
+		
+		for (Periferica p : listaPeriferica) {
+			if (p.getTipologia().equals("display"))
+				listaPeriferica2.add(p);
 		}
+		return listaPeriferica2;
+	}
+	
+	
+	@Transactional
+	public List<Periferica> mousePeriferiche() {
+		List<Periferica> listaPeriferica = this.tutti();
 		
+		List<Periferica> listaPeriferica2 = new ArrayList<Periferica>();
+
+
+		for (Periferica p : listaPeriferica) {
+			if (p.getTipologia().equals("mouse"))
+				listaPeriferica2.add(p);
+		}
+		return listaPeriferica2;
+	}
+	
+	
+	@Transactional
+	public List<Periferica> tastierePeriferiche() {
+		
+		List<Periferica> listaPeriferica = this.tutti();
+		
+		List<Periferica> listaPeriferica2 = new ArrayList<Periferica>();
+
+
+		for (Periferica p : listaPeriferica) {
+			if (p.getTipologia().equals("tastiera"))
+				listaPeriferica2.add(p);
+		}
+		return listaPeriferica2;
+	}
+	
+	
+	@Transactional
+	public List<Periferica> cuffiePeriferiche() {
+		List<Periferica> listaPeriferica = this.tutti();
+		
+		List<Periferica> listaPeriferica2 = new ArrayList<Periferica>();
+
+
+		for (Periferica p : listaPeriferica) {
+			if (p.getTipologia().equals("cuffia"))
+				listaPeriferica2.add(p);
+		}
+		return listaPeriferica2;
+	}
+	
+	
+	@Transactional
+	public List<Periferica> extraPeriferiche() {
+		List<Periferica> listaPeriferica = this.tutti();
+		
+		List<Periferica> listaPeriferica2 = new ArrayList<Periferica>();
+
+
+		for (Periferica p : listaPeriferica) {
+			if (p.getTipologia().equals("extra"))
+				listaPeriferica2.add(p);
+		}
+		return listaPeriferica2;
+	}
+
 }
