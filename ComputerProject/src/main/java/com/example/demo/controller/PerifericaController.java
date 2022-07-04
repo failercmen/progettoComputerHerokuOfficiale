@@ -32,10 +32,16 @@ public class PerifericaController {
     		return "listaPeriferiche.html";
     }
     
+    @RequestMapping(value = "/admin/periferiche", method = RequestMethod.GET)
+    public String getListaPerifericheAdmin(Model model) {
+    		model.addAttribute("listaPeriferiche", this.perifericaService.tutti());
+    		return "admin/listaPeriferiche.html";
+    }
+    
     @RequestMapping(value = "/admin/periferica", method = RequestMethod.GET)
     public String addPeriferica(Model model) {
     	model.addAttribute("periferica", new Periferica());
-        return "perifericaForm.html";
+        return "admin/perifericaForm.html";
     }
     
     @RequestMapping(value = "/admin/periferica", method = RequestMethod.POST)
@@ -44,17 +50,14 @@ public class PerifericaController {
         if (!bindingResult.hasErrors()) {
         	this.perifericaService.inserisci(periferica);
             model.addAttribute("listaPeriferiche", this.perifericaService.tutti());
-            return "listaPeriferiche.html";
+            return "admin/listaPeriferiche.html";
         }
-        return "perifericaForm.html";
+        return "admin/perifericaForm.html";
     }
     
     @RequestMapping(value = "/periferica/{id}", method = RequestMethod.GET)
     public String getChef(@PathVariable("id") Long id, Model model) {
     	model.addAttribute("periferica", this.perifericaService.perifericaPerId(id));
-    	return "periferica.html";
+    	return "Periferica.html";
     }
-    
-    
-
 }
