@@ -29,28 +29,68 @@
 	</header>
 	<div class="centralBox">
 		<div class="componente">
+			<h3>Case</h3>
+			<ul>
+				<li th:each="case : ${listaCase}">
+					<a th:text="${case.nome}">case</a>
+				</li>
+			</ul>			
+		</div>
+		<div class="componente">
 			<h3>Schede Madri</h3>
+			<ul>
+				<li th:each="schedaMadre : ${listaSchedeMadri}">
+					<a th:text="${schedaMadre.nome}">schedaMadre</a>
+				</li>
+			</ul>			
 		</div>
 		<div class="componente">
 			<h3>Schede Video</h3>
+			<ul>
+				<li th:each="schedaVideo : ${listaSchedeVideo}">
+					<a th:text="${schedaVideo.nome}">schedaVideo</a>
+				</li>
+			</ul>			
 		</div>
 		<div class="componente">
 			<h3>Cpu</h3>
+			<ul>
+				<li th:each="cpu : ${listaCpu}">
+					<a th:text="${cpu.nome}">cpu</a>
+				</li>
+			</ul>			
 		</div>
 		<div class="componente">
 			<h3>Ram</h3>
+			<ul>
+				<li th:each="ram : ${listaRam}">
+					<a th:text="${ram.nome}">cpu</a>
+				</li>
+			</ul>			
 		</div>
 		<div class="componente">
 			<h3>Alimentatori</h3>
+			<ul>
+				<li th:each="alimentatore : ${listaAlimentatori}">
+					<a th:text="${alimentatore.nome}">cpu</a>
+				</li>
+			</ul>		
 		</div>
 		<div class="componente">
 			<h3>Cooling</h3>
+			<ul>
+				<li th:each="cooling : ${listaCooling}">
+					<a th:text="${cooling.nome}">cooling</a>
+				</li>
+			</ul>
 		</div>
 		<div class="componente">
 			<h3>Memorie</h3>
-		</div>
-		<div class="componente">
-			<h3>Extra</h3>
+			<ul>
+				<li th:each="memorie : ${listaMemorie}">
+					<a th:text="${memorie.nome}">cooling</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 	<footer>

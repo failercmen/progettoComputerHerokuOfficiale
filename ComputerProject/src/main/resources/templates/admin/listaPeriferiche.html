@@ -28,20 +28,88 @@
 		</div>
 	</header>
 	<div class="centralBox">
+<<<<<<< HEAD
 		<div class="periferica">
+=======
+	
+	
+		<div class="componente">
+>>>>>>> 2bb495d1af5ea54a044629200316101d4d2ee2e7
 			<h3>Display</h3>
+			<div th:if="${listaDisplay != null}" >
+				<div th:each="display : ${listaDisplay}">
+
+					<a href="Periferica.html"
+						th:href="@{'/periferica' + '/' + ${display.id}}"
+						th:text="${display.nome}">Nome Display</a>
+					<!-- metti Delete -->
+
+				</div>
+			</div>
+			<div th:unless="${listaDisplay}">Nessun display</div>
 		</div>
+<<<<<<< HEAD
 		<div class="periferica">
+=======
+
+
+ 
+		<div class="componente">
+>>>>>>> 2bb495d1af5ea54a044629200316101d4d2ee2e7
 			<h3>Tastiere</h3>
+			<div th:if="${listaTastiere}">
+				<div th:each="tastiera : ${listaTastiere}">
+					<a href="periferica.html"
+						th:href="@{'/periferica' + '/' + ${tastiera.id}}"
+						th:text="${tastiera.nome}">Nome Tastiera</a>
+
+
+				</div>
+			</div>
+			<div th:unless="${listaDisplay}">Nessun display</div>
 		</div>
+<<<<<<< HEAD
 		<div class="periferica">
 			<h3>Mouse</h3>
 		</div>
 		<div class="periferica">
 			<h3>Cuffie</h3>
+=======
+
+
+	
+	<div class="componente">
+		<h3>Mouse</h3>
+
+		<div th:each="mouse : ${listaMouse}">
+			<a href="periferica.html"
+				th:href="@{'/periferica' + '/' + ${mouse.id}}"
+				th:text="${mouse.nome}">Nome Mouse</a>
+
+>>>>>>> 2bb495d1af5ea54a044629200316101d4d2ee2e7
 		</div>
 
 	</div>
+	
+	
+	
+	<div class="componente">
+		<h3>Cuffie</h3>
+
+		<div th:each="cuffia : ${listaCuffie}">
+			<a href="periferica.html"
+				th:href="@{'/periferica' + '/' + ${cuffia.id}}"
+				th:text="${cuffia.nome}">Nome Cuffia</a>
+
+
+		</div>
+
+	</div>
+
+
+
+</div>
+
 	<footer>
 		<div>
 			<img
