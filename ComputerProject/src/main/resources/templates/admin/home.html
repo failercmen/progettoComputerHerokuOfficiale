@@ -12,19 +12,27 @@
   <body>
     <header>
     		<img src="/images/logo.png">
-    	<div class="titolo">
+
+    	<div class="titolo" >
+    	
+    	
     		<h1>OFFLINESTORE</h1>
      	</div>
      	<div class="logout">
+     	<a th:href="@{/logout}">Logout</a>
           <p th:text="${#authentication.getPrincipal().getUsername()}"></p>
-      		LOGOUT
       	</div>      
     </header>
     <nav>
 		<span class="opzioni">Crea la tua build</span>
 		<span class="opzioni"><a th:href="@{/admin/componenti}">Componenti</a></span>
 		<span class="opzioni"><a th:href="@{/admin/periferiche}">Periferiche</a></span>
-		<span class="opzioni"><a th:href="@{/admin/periferica}">Aggiungi periferica</a></span>
+		<div class="dropdown">
+              <button class="dropbtn">Operazioni</button>
+                  <div class="dropdown-content">
+                    <a th:href="@{/admin/periferica}">Aggiungi periferica</a>
+                  </div>
+        </div>
    	</nav>
     <div class="fascia">
       <div class="slogan">
