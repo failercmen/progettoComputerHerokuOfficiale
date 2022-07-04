@@ -50,17 +50,27 @@ public class ComponenteController {
 	/*--------------------------------------------------------------------------*/
 
 	@RequestMapping(value = "/admin/componente", method = RequestMethod.GET)
-	public String addChef(Model model) {
+	public String addComponente(Model model) {
 		model.addAttribute("componente", new Componente());
+<<<<<<< HEAD
+		return "admin/componenteForm.html";
+=======
 		return "/admin/componenteForm.html";
+>>>>>>> 2bb495d1af5ea54a044629200316101d4d2ee2e7
 	}
 
 	@RequestMapping(value = "/admin/componente", method = RequestMethod.POST)
-	public String addChef(@ModelAttribute("componente") Componente componente, Model model,
+	public String addComponente(@ModelAttribute("componente") Componente componente, Model model,
 			BindingResult bindingResult) {
 		this.componenteValidator.validate(componente, bindingResult);
 		if (!bindingResult.hasErrors()) {
 			this.componenteService.inserisci(componente);
+<<<<<<< HEAD
+			model.addAttribute("listaComponenti", this.componenteService.tutti());
+			return "admin/listaComponenti.html";
+		}
+		return "admin/componenteForm.html";
+=======
 			
 			model.addAttribute("listaCase", this.componenteService.caseComponenti());
 			model.addAttribute("listaSchedeVideo", this.componenteService.schedaVideoComponenti());
@@ -73,17 +83,18 @@ public class ComponenteController {
 			return "/admin/listaComponenti.html";
 		}
 		return "/admin/componenteForm.html";
+>>>>>>> 2bb495d1af5ea54a044629200316101d4d2ee2e7
 	}
 
 	@RequestMapping(value = "/componente/{id}", method = RequestMethod.GET)
-	public String getChef(@PathVariable("id") Long id, Model model) {
+	public String getComponente(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("componente", this.componenteService.componentePerId(id));
 		return "componente.html";
 	}
 
 	@Transactional
 	@GetMapping("/deleteComponente/{id}")
-	public String deleteIngrediente(@PathVariable("id") Long id, Model model) {
+	public String deleteComponente(@PathVariable("id") Long id, Model model) {
 
 		Componente c = componenteService.componentePerId(id);
 

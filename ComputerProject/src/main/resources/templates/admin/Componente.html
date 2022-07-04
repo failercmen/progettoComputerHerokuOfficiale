@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-            <a th:href="@{/home}"><img src="/images/logo.png"></a>
+            <a th:href="@{/admin/home}"><img src="/images/logo.png"></a>
 
         <div class="titolo">
             <h1>OFFLINESTORE</h1>
@@ -22,10 +22,11 @@
     </header>
  	<div id = "box">
       <div id = "boxItem">
-        <h2>Periferica</h2>
+        <h2>Componente</h2>
         <div class = "text">
         Nome: <span th:text="*{nome}">Nome </span><br><br>
         Descrizione: <span th:text="*{descrizione}">Descrizione </span><br><br>
+        Tipologia: <span th:text="*{tipologia}">Tipologia </span><br><br>
         Prezzo: <span th:text="*{prezzo}">Prezzo </span>
         </div>
       </div>

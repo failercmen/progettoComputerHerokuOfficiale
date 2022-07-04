@@ -14,10 +14,18 @@ header{
   background-color: #043c64;
 }
 
+header a {
+	width: 12%;
+}
+
 header img{
+	width: 100%;
+}
+
+/*header img{
   width:5%;
   border:2px solid;
-}
+}*/
 
 h1{
   font-family: 'Audiowide';
