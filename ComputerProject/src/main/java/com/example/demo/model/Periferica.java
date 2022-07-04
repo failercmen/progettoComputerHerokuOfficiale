@@ -12,15 +12,26 @@ public class Periferica {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@NotBlank //no spazi vuoti o bianchi
+
+	@NotBlank // no spazi vuoti o bianchi
 	private String nome;
-	
+
 	@NotBlank
 	private String descrizione;
-	
+
 	@NotBlank
+	private String tipologia;
+	
 	private float prezzo;
+
+	public String getTipologia() {
+		return tipologia;
+	}
+
+	public void setTipologia(String tipologia) {
+		this.tipologia = tipologia;
+	}
+
 
 	public Long getId() {
 		return id;
@@ -53,6 +64,5 @@ public class Periferica {
 	public void setPrezzo(float prezzo) {
 		this.prezzo = prezzo;
 	}
-	
-	
+
 }
