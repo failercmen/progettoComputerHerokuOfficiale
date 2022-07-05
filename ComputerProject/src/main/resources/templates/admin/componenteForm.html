@@ -3,7 +3,6 @@
 <head>
 <title>componente Form</title>
 <link rel="stylesheet" href="/css/componenteForm.css" type="text/css" />
-<<<<<<< HEAD
 <style>@import
 	url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
 	;
@@ -46,48 +45,5 @@
 					</div>
 				</form>
 			</div>
-=======
-<style>
-@import
-    url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27%27')
-    ;
-@import
-    url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27%27')
-    ;
-</style>
-</head>
-<body>
-    <h1>Inserisci i dati di una componente</h1>
-    <div id="checkBox">
-        <form th:action="@{/admin/componente}" method="POST" th:object="${componente}">
-                    <div id="box">
-                        <div class="boxNome">
-                            <span>Nome:</span> <span><input type="text"
-                                th:field="*{nome}" /></span>
-                        </div>
-                        <div class="boxDesc">
-                            <span>Descrizione:</span> <span><input type="text"
-                                th:field="*{descrizione}" /></span> <span
-                                th:if="${#fields.hasErrors('descrizione')}"
-                                th:errors="*{descrizione}"></span>
-                        </div>
-                        <div class="boxTipo">
-                            <span>Tipologia:</span> <span><input type="text"
-                                th:field="*{tipologia}" /></span> <span
-                                th:if="${#fields.hasErrors('tipologia')}"
-                                th:errors="*{tipologia}"></span>
-                        </div>
-                        <div class="boxPrezzo">
-                            <span>Prezzo:</span> <span><input type="text"
-                                th:field="*{prezzo}" /></span> <span
-                                th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}"></span>
-                        </div>
-                        <div id="bottone">
-                            <span><button type="submit">Aggiungi</button></span>
-                        </div>
-                    </div>
-                </form>
-            </div>
->>>>>>> 2bb495d1af5ea54a044629200316101d4d2ee2e7
 </body>
 </html>

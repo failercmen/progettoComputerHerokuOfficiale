@@ -33,15 +33,6 @@ h1 {
     color: white;
 }
 
-.elimina{
-	text-decoration: none;
-	color: white;
-}
-
-.elimina:hover{
-	color: red;
-}
-
 .centralBox {
     margin-top: 100px;
     border-radius: 10px;

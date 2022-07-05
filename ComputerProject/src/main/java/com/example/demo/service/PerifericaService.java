@@ -9,7 +9,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.model.BuildPC;
 import com.example.demo.model.Periferica;
+import com.example.demo.repository.BuildPCRepository;
 import com.example.demo.repository.PerifericaRepository;
 
 @Service
@@ -17,6 +19,9 @@ public class PerifericaService {
 
 	@Autowired
 	private PerifericaRepository perifericaRepository; 
+	
+	@Autowired
+	private BuildPCRepository buildRepository;
 
 	@Transactional
 	public Periferica inserisci(Periferica p) {
@@ -126,6 +131,19 @@ public class PerifericaService {
 				listaPeriferica2.add(p);
 		}
 		return listaPeriferica2;
+	}
+
+	public List<BuildPC> buildDiPeriferica(Periferica perif) {
+		
+		List<BuildPC> listaBuildXComponente = new ArrayList<BuildPC>();
+
+		for (BuildPC b : buildRepository.findAll()) {
+			for (Periferica p : b.getPeriferiche()) {
+				if (p.getId() == perif.getId())
+					listaBuildXComponente.add(b);
+			}
+		}
+		return listaBuildXComponente;
 	}
 
 }

@@ -24,10 +24,10 @@
       <div id = "boxItem">
         <h2>Componente</h2>
         <div class = "text">
-        Nome: <span th:text="*{nome}">Nome </span><br><br>
-        Descrizione: <span th:text="*{descrizione}">Descrizione </span><br><br>
-        Tipologia: <span th:text="*{tipologia}">Tipologia </span><br><br>
-        Prezzo: <span th:text="*{prezzo}">Prezzo </span>
+        Nome: <span th:text="${componente.nome}">Nome </span><br><br>
+        Descrizione: <span th:text="${componente.descrizione}">Descrizione </span><br><br>
+        Tipologia: <span th:text="${componente.tipologia}">Tipologia </span><br><br>
+        Prezzo: <span th:text="${componente.prezzo}">Prezzo </span>
         </div>
       </div>
     </div>
