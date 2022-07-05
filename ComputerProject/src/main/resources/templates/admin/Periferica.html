@@ -24,9 +24,10 @@
       <div id = "boxItem">
         <h2>Periferica</h2>
         <div class = "text">
-        Nome: <span th:text="*{nome}">Nome </span><br><br>
-        Descrizione: <span th:text="*{descrizione}">Descrizione </span><br><br>
-        Prezzo: <span th:text="*{prezzo}">Prezzo </span>
+        Nome: <span th:text="${periferica.nome}">Nome </span><br><br>
+        Descrizione: <span th:text="${periferica.descrizione}">Descrizione </span><br><br>
+        Tipologia: <span th:text="${periferica.tipologia}">Tipologia </span><br><br>
+        Prezzo: <span th:text="${periferica.prezzo}">Prezzo </span>
         </div>
       </div>
     </div>

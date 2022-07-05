@@ -72,7 +72,6 @@ public class ComponenteService {
 					listaBuildXComponente.add(b);
 			}
 		}
-
 		return listaBuildXComponente;
 	}
 
