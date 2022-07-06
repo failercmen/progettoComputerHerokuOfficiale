@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="widht=device-widht, initial-scale=1">
+<title>Lista build</title>
+<link href="/css/listaBuild.css" rel="stylesheet" type="text/css">
+<style></style>
+<script></script>
+</head>
+<body>
+    <h3> Le mie build </h3>
+
+      <div id = "listaCompleta">
+        <ul>
+            <li th:each="build : ${ListaBuild}">
+                  <span class = "nomeBuild"><a href="build.html" th:href="@{'/build' + '/' + ${build.id}}" 
+                 th:text="${build.nome}">Nome build</a>
+                   </span>
+                  <!-- <span class="elimina">
+                      <a th:href="@{'/admin/cancellaBuffet' + '/' + ${buffet.id}}">Elimina</a>
+                  </span> -->
+            </li>
+        </ul>
+      </div>
+    <!-- <div id="footer_bar">
+             <a th:href="@{/admin/tornaHome}">Torna alla home</a>
+    </div> -->
+</body>
+</html>
