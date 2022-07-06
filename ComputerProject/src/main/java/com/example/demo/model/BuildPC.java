@@ -22,7 +22,7 @@ public class BuildPC {
 	@NotBlank
 	private String descrizione;
 	
-	@NotBlank
+//	@NotBlank
 	private float prezzoTotale;
 	
 	@OneToMany
