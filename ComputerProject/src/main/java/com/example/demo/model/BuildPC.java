@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
@@ -15,20 +16,23 @@ public class BuildPC {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@NotBlank //no spazi vuoti o bianchi
+
+	@NotBlank // no spazi vuoti o bianchi
 	private String nome;
-	
+
 	@NotBlank
 	private String descrizione;
-	
-	@NotBlank
+
+	// @NotBlank
 	private float prezzoTotale;
-	
-	@OneToMany
+
+	// @OneToMany
+	// private List<Componente> componenti;
+
+	@ManyToMany(mappedBy = "buildsComponenti")
 	private List<Componente> componenti;
-	
-	@OneToMany
+
+	@ManyToMany(mappedBy = "buildsPeriferiche")
 	private List<Periferica> periferiche;
 
 	public Long getId() {
@@ -78,6 +82,5 @@ public class BuildPC {
 	public void setPeriferiche(List<Periferica> periferiche) {
 		this.periferiche = periferiche;
 	}
-	
-	
+
 }

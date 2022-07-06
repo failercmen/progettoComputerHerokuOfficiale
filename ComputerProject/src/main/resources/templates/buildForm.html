@@ -1,50 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>Titolo Pagina</title>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap');
-    </style>
-    <script></script>
-    <link rel="stylesheet" href="/css/componente.css">
-  </head>
-  <body>
-    <header>
-            <img src="https://image.similarpng.com/very-thumbnail/2021/01/Twitch-icon-isolated-on-transparent-background-PNG.png">
+<head>
+    <title>build form</title>
+    <link href="/css/buildForm.css" rel="stylesheet" type="text/css">
+      <style>@import
+    url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap')    ;
 
-        <div class="titolo">
-            <h1>OFFLINESTORE</h1>
-         </div>
-         <div class="logout">
-          <p th:text="${#authentication.getPrincipal().getUsername()}"></p>
-              LOGOUT
+    @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap') ;
+    </style>
+</head>
+<body>
+  <h1>Dai un nome e una descrizione alla tua build</h1>
+    <div id = "checkBox">
+        <form th:action= "@{/listaBuild}" method="POST" th:object="${build}">
+        <div id = "box">
+            <div class = "boxNome">
+                <span>Nome:</span> <span><input type="text" th:field="${build.nome}" /></span>
+            </div>
+            <div class = "boxDesc">
+                <span>Descrizione:</span> <span><input type="text" th:field="*{descrizione}" /></span>
+                <span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
+            </div>
+            
+            <div id = "bottone">
+                <span><button type="submit">Crea</button></span>
+            </div>
           </div>
-    </header>
- 	<div id = "box">
-      <div id = "descCase">
-        <h2>Case</h2>
-         Nome: <span th:text="*{nome}">Nome </span><br><br>
-         Descrizione: <span th:text="*{descrizione}">Descrizione  </span><br><br>
-         Prezzo: <span th:text="*{prezzo}">Prezzo </span>
-      </div>
-      <div id = "descComponente">
-        <h2>Componenti</h2>
-        componente.tipologia: <span th:text="*{componente.nome}">Nome </span><br>
-      </div>
-      <div id = "descPeriferica">
-         <h2>Periferiche</h2>
-         LinkNome: <span th:text="*{nome}">Nome </span><br>
-      </div>
-    </div>
-    <div id = "boxCheckBox">
-      <div class = "componenti">
-        <h3>Componenti</h3>
-        
-      </div>
-      <div class = "periferiche">
-        <h3>Periferiche</h3>
-        
-      </div>
-    </div>
-  </body>
+        </form>
+     </div>
+</body>
 </html>
