@@ -17,6 +17,7 @@ import com.example.demo.model.BuildPC;
 import com.example.demo.model.Componente;
 import com.example.demo.model.Periferica;
 import com.example.demo.service.BuildPCService;
+import com.example.demo.service.ComponenteService;
 import com.example.demo.service.PerifericaService;
 
 
@@ -29,6 +30,12 @@ public class PerifericaController {
 	
     @Autowired
     private PerifericaValidator perifericaValidator;
+    
+	@Autowired
+	private ComponenteService componenteService;
+    
+	@Autowired
+	private BuildPCService buildService;
     
     
     @RequestMapping(value = "/periferiche", method = RequestMethod.GET)
@@ -90,6 +97,26 @@ public class PerifericaController {
     public String getPerifericaAdmin(@PathVariable("id") Long id, Model model) {
     	model.addAttribute("periferica", this.perifericaService.perifericaPerId(id));
     	return "admin/Periferica.html";
+    }
+    
+    @GetMapping("/buildPeriferica/{buildId}/{perifericaId}")
+    public String impostaPeriferica(@PathVariable("buildId") Long buildId, @PathVariable("perifericaId") Long perifericaId, Model model) {
+        BuildPC build = buildService.buildPerId(buildId);
+        Periferica periferica = perifericaService.perifericaPerId(perifericaId);
+
+        build.getPeriferiche().add(periferica);
+        
+        
+        //nuovo
+        periferica.getBuildsPeriferiche().add(build);
+        
+        perifericaService.inserisci(periferica);
+        model.addAttribute("build", build);
+        model.addAttribute("ListaComponenti", this.componenteService.tutti());
+        model.addAttribute("ListaPeriferiche", this.perifericaService.tutti());
+        model.addAttribute("Componenti", build.getComponenti());
+        model.addAttribute("Periferiche", build.getPeriferiche());
+        return "build.html";
     }
     
     @Transactional

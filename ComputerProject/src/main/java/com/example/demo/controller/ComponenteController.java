@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.example.demo.controller.validator.ComponenteValidator;
 import com.example.demo.model.BuildPC;
 import com.example.demo.model.Componente;
+import com.example.demo.service.BuildPCService;
 import com.example.demo.service.ComponenteService;
+import com.example.demo.service.PerifericaService;
 
 @Controller
 public class ComponenteController {
@@ -24,6 +26,12 @@ public class ComponenteController {
 
 	@Autowired
 	private ComponenteValidator componenteValidator;
+	
+	@Autowired
+	private PerifericaService perifericaService;
+	
+	@Autowired
+	private BuildPCService buildService;
 
 	@RequestMapping(value = "/componenti", method = RequestMethod.GET)
 	public String getListaComponenti(Model model) {
@@ -93,6 +101,27 @@ public class ComponenteController {
 		model.addAttribute("componente", this.componenteService.componentePerId(id));
 		return "admin/Componente.html";
 	}
+	
+	@GetMapping("/buildComponente/{buildId}/{componenteId}")
+    public String impostaComponente(@PathVariable("buildId") Long buildId, @PathVariable("componenteId") Long componenteId, Model model) {
+        BuildPC build = buildService.buildPerId(buildId);
+        Componente componente = componenteService.componentePerId(componenteId);
+
+        build.getComponenti().add(componente);
+        
+        //nuovo
+        componente.getBuildsComponenti().add(build);
+        
+        componenteService.inserisci(componente);
+        
+        model.addAttribute("build", build);
+        model.addAttribute("ListaComponenti", this.componenteService.tutti());
+        model.addAttribute("ListaPeriferiche", this.perifericaService.tutti());
+        model.addAttribute("Componenti", build.getComponenti());
+        model.addAttribute("Periferiche", build.getPeriferiche());
+        return "build.html";
+    }
+	
 
 	@Transactional
 	@GetMapping("/admin/deleteComponente/{id}")
