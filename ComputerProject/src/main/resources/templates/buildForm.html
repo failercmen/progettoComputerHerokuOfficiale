@@ -15,7 +15,7 @@
         <form th:action= "@{/listaBuild}" method="POST" th:object="${build}">
         <div id = "box">
             <div class = "boxNome">
-                <span>Nome:</span> <span><input type="text" th:field="*{nome}" /></span>
+                <span>Nome:</span> <span><input type="text" th:field="${build.nome}" /></span>
             </div>
             <div class = "boxDesc">
                 <span>Descrizione:</span> <span><input type="text" th:field="*{descrizione}" /></span>

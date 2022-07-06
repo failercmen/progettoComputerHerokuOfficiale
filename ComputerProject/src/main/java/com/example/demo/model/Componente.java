@@ -1,29 +1,43 @@
 package com.example.demo.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Componente {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@NotBlank //no spazi vuoti o bianchi
+
+	@NotBlank // no spazi vuoti o bianchi
 	private String nome;
-	
-	@NotBlank 
+
+	@NotBlank
 	private String descrizione;
-	
+
 	@NotBlank
 	private String tipologia;
-	
-	
+
 	private float prezzo;
+
+	// nuovo
+	@ManyToMany
+	private List<BuildPC> buildsComponenti;
+
+	public List<BuildPC> getBuildsComponenti() {
+		return buildsComponenti;
+	}
+
+	public void setBuildsComponenti(List<BuildPC> builds) {
+		this.buildsComponenti = builds;
+	}
 
 	public Long getId() {
 		return id;
@@ -65,6 +79,4 @@ public class Componente {
 		this.prezzo = prezzo;
 	}
 
-	
-	
 }

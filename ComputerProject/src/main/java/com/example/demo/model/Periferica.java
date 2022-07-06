@@ -1,9 +1,12 @@
 package com.example.demo.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotBlank;
 
 @Entity
@@ -21,8 +24,20 @@ public class Periferica {
 
 	@NotBlank
 	private String tipologia;
-	
+
 	private float prezzo;
+
+	// nuovo
+	@ManyToMany
+	private List<BuildPC> buildsPeriferiche;
+
+	public List<BuildPC> getBuildsPeriferiche() {
+		return buildsPeriferiche;
+	}
+
+	public void setBuildsPeriferiche(List<BuildPC> buildsPeriferiche) {
+		this.buildsPeriferiche = buildsPeriferiche;
+	}
 
 	public String getTipologia() {
 		return tipologia;
@@ -31,7 +46,6 @@ public class Periferica {
 	public void setTipologia(String tipologia) {
 		this.tipologia = tipologia;
 	}
-
 
 	public Long getId() {
 		return id;

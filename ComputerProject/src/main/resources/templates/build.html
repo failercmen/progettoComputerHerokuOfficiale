@@ -32,39 +32,38 @@
 			Prezzo:
 			<!-- <span th:text="${case.prezzo}">Prezzo </span> -->
 		</div>
-		<div id="descComponente">
-			<h2>Componenti</h2>
-			Componente:
-			<!-- <span th:text="${componente.tipologia}">Nome </span><br> -->
-		</div>
-		<div id="descPeriferica">
-			<h2>Periferiche</h2>
-			Periferica:
-			<!-- <span th:text="${periferica.nome}">Nome </span><br> -->
-		</div>
-	</div>
-	<div id="impostaBox">
-		<div id="impostaComponenti">
-			<h3>Componenti</h3>
-			<div th:each="componente : ${ListaComponenti}">
-				Nome: <span th:text="${componente.nome}">Nome componente</span><br>
-				<span> <a class="button"
-					th:href="@{'/buildComponente' + '/' + ${build.id} + '/' + ${componente.id}}">
-						Assegna componente</a><br> <br>
-				</span>
-			</div>
-		</div>
-
-		<div id="impostaPeriferiche">
-			<h3>Periferiche</h3>
-			<div th:each="periferica : ${ListaPeriferiche}">
-				Nome: <span th:text="${periferica.nome}">Nome periferica</span><br>
-				<span> <a class="button"
-					th:href="@{'/buildPeriferica' + '/' + ${build.id} + '/' + ${periferica.id}}">
-						Assegna periferica</a><br> <br>
-				</span>
-			</div>
-		</div>
-	</div>
+		<div id = "descComponente">
+        <h2>Componenti</h2>
+            <span th:each="componente : ${Componenti}">
+                Nome: <span th:text="${componente.nome}">Nome componente</span><br>
+            </span>
+      </div>
+      <div id = "descPeriferica">
+         <h2>Periferiche</h2>
+             <span th:each="periferica : ${Periferiche}">
+                Nome: <span th:text="${periferica.nome}">Nome periferica</span><br>
+            </span>
+      </div>
+    </div>
+    <div id = "impostaBox">
+    <div class = "impostaComponenti">
+        <h3>Componenti</h3>
+        <div th:each="componente : ${ListaComponenti}">
+            Nome: <span th:text="${componente.nome}">Nome componente</span><br>
+            <span>
+                <a class = "button" th:href="@{'/buildComponente' + '/' + ${build.id} + '/' + ${componente.id}}"> Assegna componente</a><br><br>
+            </span>
+         </div>
+      </div>
+      <div class = "impostaPeriferiche">
+           <h3>Periferiche</h3>
+            <div th:each="periferica : ${ListaPeriferiche}">
+            Nome: <span th:text="${periferica.nome}">Nome periferica</span><br>
+            <span>
+                <a class = "button" th:href="@{'/buildPeriferica' + '/' + ${build.id} + '/' + ${periferica.id}}"> Assegna periferica</a><br><br>
+            </span>
+         </div>
+      </div>
+    </div>
 </body>
 </html>
