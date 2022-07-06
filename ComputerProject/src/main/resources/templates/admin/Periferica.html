@@ -6,11 +6,11 @@
     @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap');
     </style>
     <script></script>
-    <link rel="stylesheet" href="/css/componente.css">
+    <link rel="stylesheet" href="/css/Periferica.css">
   </head>
   <body>
     <header>
-            <a th:href="@{/home}"><img src="/images/logo.png"></a>
+            <a th:href="@{/admin/home}"><img src="/images/logo.png"></a>
 
         <div class="titolo">
             <h1>OFFLINESTORE</h1>
@@ -24,9 +24,10 @@
       <div id = "boxItem">
         <h2>Periferica</h2>
         <div class = "text">
-        Nome: <span th:text="*{nome}">Nome </span><br><br>
-        Descrizione: <span th:text="*{descrizione}">Descrizione </span><br><br>
-        Prezzo: <span th:text="*{prezzo}">Prezzo </span>
+        Nome: <span th:text="${periferica.nome}">Nome </span><br><br>
+        Descrizione: <span th:text="${periferica.descrizione}">Descrizione </span><br><br>
+        Tipologia: <span th:text="${periferica.tipologia}">Tipologia </span><br><br>
+        Prezzo: <span th:text="${periferica.prezzo}">Prezzo </span>
         </div>
       </div>
     </div>

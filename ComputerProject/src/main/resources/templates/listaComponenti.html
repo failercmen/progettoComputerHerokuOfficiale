@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="widht=device-widht, initial-scale=1">
 <title>Catering</title>
-<link href="/css/listaComponentiAdmin.css" rel="stylesheet"
+<link href="/css/listaComponenti.css" rel="stylesheet"
 	type="text/css">
 <style>
 @import
@@ -18,7 +18,7 @@
 </head>
 <body>
 	<header>
-		<a th:href="@{/admin/home}"><img src="/images/logo.png"></a>
+		<a th:href="@{/home}"><img src="/images/logo.png"></a>
 		<div class="titolo">
 			<h1>OFFLINESTORE</h1>
 		</div>
@@ -31,97 +31,65 @@
 		<div class="componente">
 			<h3>Case</h3>
 				<div th:each="case : ${listaCase}">
-					<a class = "nome" href="admin/Componente.html"
-						th:href="@{'/admin/componente' + '/' + ${case.id}}"
+					<a class = "nome" href="Componente.html"
+						th:href="@{'/componente' + '/' + ${case.id}}"
 						th:text="${case.nome}">case</a>
-
-					<span>
-               	  		<a class = "elimina" th:href="@{'/admin/deleteComponente' + '/' + ${case.id}}">Elimina</a>
-               		</span>
 				</div>
 		</div>
 		<div class="componente">
 			<h3>Schede Madri</h3>
 				<div th:each="schedaMadre : ${listaSchedeMadri}">
-					<a class = "nome" href="admin/Componente.html"
-						th:href="@{'/admin/componente' + '/' + ${schedaMadre.id}}"
+					<a class = "nome" href="Componente.html"
+						th:href="@{'/componente' + '/' + ${schedaMadre.id}}"
 						th:text="${schedaMadre.nome}">schedaMadre</a>
-					
-					<span>
-               	  		<a class = "elimina" th:href="@{'/admin/deleteComponente' + '/' + ${schedaMadre.id}}">Elimina</a>
-               		</span>
 				</div>
 		</div>
 		<div class="componente">
 			<h3>Schede Video</h3>
 				<div th:each="schedaVideo : ${listaSchedeVideo}">
-					<a class = "nome" href="admin/Componente.html"
-						th:href="@{'/admin/componente' + '/' + ${schedaVideo.id}}"
+					<a class = "nome" href="Componente.html"
+						th:href="@{'/componente' + '/' + ${schedaVideo.id}}"
 						th:text="${schedaVideo.nome}">schedaVideo</a>
-					
-					<span>
-               	  		<a class = "elimina" th:href="@{'/admin/deleteComponente' + '/' + ${schedaVideo.id}}">Elimina</a>
-               		</span>
 				</div>
 		</div>
 		<div class="componente">
 			<h3>Cpu</h3>
 				<div th:each="cpu : ${listaCpu}">
-					<a class = "nome" href="admin/Componente.html"
-						th:href="@{'/admin/componente' + '/' + ${cpu.id}}"
+					<a class = "nome" href="Componente.html"
+						th:href="@{'/componente' + '/' + ${cpu.id}}"
 						th:text="${cpu.nome}">cpu</a>
-					
-					<span>
-               	  		<a class = "elimina" th:href="@{'/admin/deleteComponente' + '/' + ${cpu.id}}">Elimina</a>
-               		</span>
 				</div>
 		</div>
 		<div class="componente">
 			<h3>Ram</h3>
 				<div th:each="ram : ${listaRam}">
-					<a class = "nome" href="admin/Componente.html"
-						th:href="@{'/admin/componente' + '/' + ${ram.id}}"
+					<a class = "nome" href="Componente.html"
+						th:href="@{'/componente' + '/' + ${ram.id}}"
 						th:text="${ram.nome}">ram</a>
-					
-					<span>
-               	  		<a class = "elimina" th:href="@{'/admin/deleteComponente' + '/' + ${ram.id}}">Elimina</a>
-               		</span>
 				</div>
 		</div>
 		<div class="componente">
 			<h3>Alimentatori</h3>
 				<div th:each="alimentatore : ${listaAlimentatori}">
-					<a class = "nome" href="admin/Componente.html"
-						th:href="@{'/admin/componente' + '/' + ${alimentatore.id}}"
+					<a class = "nome" href="Componente.html"
+						th:href="@{'/componente' + '/' + ${alimentatore.id}}"
 						th:text="${alimentatore.nome}">alimentatore</a>
-					
-					<span>
-               	  		<a class = "elimina" th:href="@{'/admin/deleteComponente' + '/' + ${aliminetatore.id}}">Elimina</a>
-               		</span>
 				</div>
 		</div>
 		<div class="componente">
 			<h3>Cooling</h3>
 				<div th:each="cooling : ${listaCooling}">
-					<a class = "nome" href="admin/Componente.html"
-						th:href="@{'/admin/componente' + '/' + ${cooling.id}}"
+					<a class = "nome" href="Componente.html"
+						th:href="@{'/componente' + '/' + ${cooling.id}}"
 						th:text="${cooling.nome}">cooling</a>
-					
-					<span>
-               	  		<a class = "elimina" th:href="@{'/admin/deleteComponente' + '/' + ${cooling.id}}">Elimina</a>
-               		</span>
 				</div>
 		</div>
 		<div class="componente">
 			<h3>Memorie</h3>
 				<div th:each="memorie : ${listaMemorie}">
-					<a class = "nome" href="admin/Componente.html"
-						th:href="@{'/admin/componente' + '/' + ${memorie.id}}"
-						th:text="${memorie.nome}">cooling</a>
-					
-					<span>
-               	  		<a class = "elimina" th:href="@{'/admin/deleteComponente' + '/' + ${memorie.id}}">Elimina</a>
-               		</span>
+					<a class = "nome" href="Componente.html"
+						th:href="@{'/componente' + '/' + ${memorie.id}}"
+						th:text="${memorie.nome}">memorie</a>
 				</div>
 		</div>
 	</div>

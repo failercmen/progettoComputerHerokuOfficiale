@@ -46,6 +46,11 @@ nav {
 	font-size: 20px;
 }
 
+.opzioni a{
+	text-decoration: none;
+	color: white;
+}
+
 .opzioni:hover {
 	transition-duration: 0.4s;
 	font-size: 23px;

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.BuildPC;
+
 import com.example.demo.repository.BuildPCRepository;
 
 @Service
@@ -16,6 +17,7 @@ public class BuildPCService {
 
 	@Autowired
 	private BuildPCRepository buildRepository; 
+	
 
 	@Transactional
 	public BuildPC inserisci(BuildPC build) {
@@ -44,12 +46,13 @@ public class BuildPCService {
 		else 
 			return false;
 	}
-
+	
 
 
 	@Transactional
 	public void deleteById(Long id) {
 		buildRepository.deleteById(id);
 	}
+	
 
 }

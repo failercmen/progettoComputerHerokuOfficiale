@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="widht=device-widht, initial-scale=1">
 <title>Catering</title>
-<link href="/css/listaPerifericheAdmin.css" rel="stylesheet"
+<link href="/css/listaPeriferiche.css" rel="stylesheet"
 	type="text/css">
 <style>
 @import
@@ -18,7 +18,7 @@
 </head>
 <body>
 	<header>
-		<a th:href="@{/admin/home}"><img src="/images/logo.png"></a>
+		<a th:href="@{/home}"><img src="/images/logo.png"></a>
 		<div class="titolo">
 			<h1>OFFLINESTORE</h1>
 		</div>
@@ -35,14 +35,9 @@
 			<div th:if="${listaDisplay != null}" >
 				<div th:each="display : ${listaDisplay}">
 
-					<a class = "nome" href="admin/Periferica.html"
-						th:href="@{'/admin/periferica' + '/' + ${display.id}}"
+					<a class = "nome" href="Periferica.html"
+						th:href="@{'/periferica' + '/' + ${display.id}}"
 						th:text="${display.nome}">Nome Display</a>
-					<!-- metti Delete -->
-					<span>
-               			<a class = "elimina" th:href="@{'/admin/deletePeriferica' + '/' + ${display.id}}">Elimina</a>
-            		</span>
-
 				</div>
 			</div>
 			<div th:unless="${listaDisplay}">Nessun display</div>
@@ -52,13 +47,9 @@
 			<h3>Tastiere</h3>
 			<div th:if="${listaTastiere}">
 				<div th:each="tastiera : ${listaTastiere}">
-					<a class = "nome" href="admin/Periferica.html"
-						th:href="@{'/admin/periferica' + '/' + ${tastiera.id}}"
+					<a class = "nome" href="periferica.html"
+						th:href="@{'/periferica' + '/' + ${tastiera.id}}"
 						th:text="${tastiera.nome}">Nome Tastiera</a>
-
-				<span>
-               		<a class = "elimina" th:href="@{'/admin/deletePeriferica' + '/' + ${tastiera.id}}">Elimina</a>
-            	</span>
 				</div>
 			</div>
 			<div th:unless="${listaTastiere}">Nessun display</div>
@@ -68,13 +59,9 @@
 		<h3>Mouse</h3>
 
 		<div th:each="mouse : ${listaMouse}">
-			<a class = "nome" href="admin/Periferica.html"
-				th:href="@{'/admin/periferica' + '/' + ${mouse.id}}"
+			<a class = "nome" href="periferica.html"
+				th:href="@{'/periferica' + '/' + ${mouse.id}}"
 				th:text="${mouse.nome}">Nome Mouse</a>
-			
-			<span>
-               	<a class = "elimina" th:href="@{'/admin/deletePeriferica' + '/' + ${mouse.id}}">Elimina</a>
-            </span>
 		</div>
 	</div>
 
@@ -82,13 +69,9 @@
 		<h3>Cuffie</h3>
 
 		<div th:each="cuffia : ${listaCuffie}">
-			<a class = "nome" href="admin/Periferica.html"
-				th:href="@{'/admin/periferica' + '/' + ${cuffia.id}}"
+			<a class = "nome" href="periferica.html"
+				th:href="@{'/periferica' + '/' + ${cuffia.id}}"
 				th:text="${cuffia.nome}">Nome Cuffia</a>
-				
-			<span>
-               	<a class = "elimina" th:href="@{'/admin/deletePeriferica' + '/' + ${cuffia.id}}">Elimina</a>
-            </span>
 		</div>
 	</div>
 </div>
