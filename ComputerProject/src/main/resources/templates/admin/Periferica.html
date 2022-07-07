@@ -17,7 +17,7 @@
          </div>
          <div class="logout">
           <p th:text="${#authentication.getPrincipal().getUsername()}"></p>
-              LOGOUT
+          <a th:href="@{/logout}">Logout</a>
           </div>
     </header>
  	<div id = "box">

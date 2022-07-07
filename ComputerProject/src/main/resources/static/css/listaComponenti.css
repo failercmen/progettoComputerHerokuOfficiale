@@ -33,6 +33,11 @@ h1 {
 	color: white;
 }
 
+.logout a{
+	text-decoration: none;
+	color:white;
+}
+
 .centralBox {
 	margin-top: 100px;
 	border-radius: 10px;
@@ -55,12 +60,16 @@ h1 {
 
 .nome{
 	text-decoration: none;
+	font-family: 'Share Tech';
+	font-size:25px;
 	color: #043c64;
 }
 
 .nome:hover{
-	text-decoration: underline;
-	text-decoration-color: #043c64; 
+	text-decoration: none;
+	color: orange;
+	transition-duration: 0.4s;
+	font-size:27px;
 }
 
 h3 {

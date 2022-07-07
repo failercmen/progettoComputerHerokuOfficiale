@@ -119,3 +119,12 @@ h2{
 	text-decoration: none;
 	color:white;
 }
+
+.button{
+	text-decoration: none;
+	color:orange;
+}
+
+.button:hover{
+	text-decoration: underline;
+}
