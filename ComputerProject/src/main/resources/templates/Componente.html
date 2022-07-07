@@ -1,42 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<title>Titolo Pagina</title>
-<style>
-@import
-	url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap')
-	;
-</style>
-<script></script>
-<link rel="stylesheet" href="/css/componente.css">
-</head>
-<body>
-	<header>
-		<a th:href="@{/home}"><img src="/images/logo.png"></a>
+  <head>
+    <title>Titolo Pagina</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap');
+    </style>
+    <script></script>
+    <link rel="stylesheet" href="/css/Componente.css">
+  </head>
+  <body>
+    <header>
+            <a th:href="@{/home}"><img src="/images/logo.png"></a>
 
-		<div class="titolo">
-			<h1>OFFLINESTORE</h1>
-		</div>
-		<div class="logout">
-			<p th:text="${#authentication.getPrincipal().getUsername()}"></p>
-			LOGOUT
-		</div>
-	</header>
-	<div id="box">
-		<div id="boxItem">
-			<h2>Componente</h2>
-			<div class="text">
-				Nome: <span th:text="${componente.nome}">Nome </span><br>
-				<br> Descrizione: <span th:text="${componente.descrizione}">Descrizione
-				</span><br>
-				<br> Tipologia: <span th:text="${componente.tipologia}">Tipologia
-				</span><br>
-				<br> Prezzo: <span th:text="${componente.prezzo}">Prezzo
-				</span>
-			</div>
-		</div>
-	</div>
-	<footer>
+        <div class="titolo">
+            <h1>OFFLINESTORE</h1>
+         </div>
+         <div class="logout">
+          <p th:text="${#authentication.getPrincipal().getUsername()}"></p>
+          <a th:href="@{/logout}">Logout</a>
+          </div>
+    </header>
+ 	<div id = "box">
+      <div id = "boxItem">
+        <h2>Componente</h2>
+        <div class = "text">
+        Nome: <span th:text="${componente.nome}">Nome </span><br><br>
+        Descrizione: <span th:text="${componente.descrizione}">Descrizione </span><br><br>
+        Tipologia: <span th:text="${componente.tipologia}">Tipologia </span><br><br>
+        Prezzo: <span th:text="${componente.prezzo}">Prezzo </span>
+        </div>
+      </div>
+    </div>
+    <footer>
 		<div>
 			<img
 				src="https://us.123rf.com/450wm/sdcrea/sdcrea1609/sdcrea160902427/63257603-musica-concept-design-con-l-auricolare-.jpg?ver=6">
@@ -47,5 +42,5 @@
 			Andrea Evangelista-Alessia Di Silvestre-Andrea Cipriani
 		</div>
 	</footer>
-</body>
+  </body>
 </html>

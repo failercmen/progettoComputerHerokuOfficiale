@@ -24,14 +24,14 @@
 		</div>
 		<div class="logout">
 			<p th:text="${#authentication.getPrincipal().getUsername()}"></p>
-			LOGOUT
+			<a th:href="@{/logout}">Logout</a>
 		</div>
 	</header>
 	<div class="centralBox">
 	
 	
 		<div class="periferica">
-			<h3>Display</h3>
+			<h2>Display</h2>
 			<div th:if="${listaDisplay != null}" >
 				<div th:each="display : ${listaDisplay}">
 
@@ -44,7 +44,7 @@
 		</div>
  
 		<div class="periferica">
-			<h3>Tastiere</h3>
+			<h2>Tastiere</h2>
 			<div th:if="${listaTastiere}">
 				<div th:each="tastiera : ${listaTastiere}">
 					<a class = "nome" href="periferica.html"
@@ -56,7 +56,7 @@
 		</div>
 	
 	<div class="periferica">
-		<h3>Mouse</h3>
+		<h2>Mouse</h2>
 
 		<div th:each="mouse : ${listaMouse}">
 			<a class = "nome" href="periferica.html"
@@ -66,7 +66,7 @@
 	</div>
 
 	<div class="periferica">
-		<h3>Cuffie</h3>
+		<h2>Cuffie</h2>
 
 		<div th:each="cuffia : ${listaCuffie}">
 			<a class = "nome" href="periferica.html"

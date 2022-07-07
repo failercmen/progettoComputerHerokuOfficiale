@@ -46,9 +46,9 @@ h2{
 #descCase{
   /*border: 3px solid red;*/
   width: 20%;
-  font-family: 'Share Tech';
+  font-family: 'Audiowide';
   text-align: center;
-  font-size: 18px;
+  font-size: 25px;
   color: white;
   background: linear-gradient(to bottom right, #043c64 35%, #00ffff 100%);
   border-radius: 15px;
@@ -57,9 +57,10 @@ h2{
 #descComponente{
   /*border: 3px solid red;*/
   width: 25%;
-  font-family: 'Share Tech';
+  height: 125%;
+  font-family: 'Audiowide';
   text-align: center;
-  font-size: 18px;
+  font-size: 28px;
   color: white;
   background: linear-gradient(to bottom right, #043c64 35%, #00ffff 100%);
   border-radius: 15px;
@@ -69,9 +70,10 @@ h2{
 #descPeriferica{
   /*border: 3px solid red;*/
   width: 25%;
-  font-family: 'Share Tech';
+  height: 125%;
+  font-family: 'Audiowide';
   text-align: center;
-  font-size: 18px;
+  font-size: 28px;
   color: white;
   background: linear-gradient(to bottom right, #043c64 35%, #00ffff 100%);
   border-radius: 15px;
@@ -83,7 +85,7 @@ h2{
   /*border: 3px solid green;*/
   width: 100%;
   height: 300px;
-  margin-top: 20px;
+  margin-top: 100px;
   justify-content: space-around;
 }
 
@@ -96,6 +98,28 @@ h2{
   text-align: center;
   font-family: 'Audiowide';
   border-radius: 15px;
+  font-size: 28px;
+}
+
+.pezzo{
+	color: white;
+	text-decoration: none;
+}
+
+.pezzo:hover{
+	color: white;
+	text-decoration: underline;
+	transition-duration:0.4s;
+}
+
+.delete{
+	text-decoration: none;
+	color: orange;
+	margin-left: 20px;
+}
+
+.delete:hover{
+	color: red;	
 }
 
 .impostaPeriferiche{
@@ -107,6 +131,7 @@ h2{
   text-align: center;
   font-family: 'Audiowide';
   border-radius: 15px;
+  font-size: 28px;
 }
 
 .logout{
@@ -118,4 +143,13 @@ h2{
 .logout a{
 	text-decoration: none;
 	color:white;
+}
+
+.button{
+	text-decoration: none;
+	color:orange;
+}
+
+.button:hover{
+	text-decoration: underline;
 }

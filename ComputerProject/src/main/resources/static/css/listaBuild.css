@@ -19,7 +19,17 @@ header a {
 }
 
 header img{
-    width: 100%;
+    width: 110%;
+}
+
+.logout {
+	font-family: 'Share Tech';
+	color: white;
+}
+
+.logout a{
+	text-decoration: none;
+	color:white;
 }
 
 h1 {
@@ -33,25 +43,35 @@ h1 {
     color: white;
 }
 
-.listaCompleta {
-    margin-top: 100px;
+#listaCompleta {
+	display: flex;
+	flex-direction: column;
+    margin-top: 40px;
     border-radius: 10px;
     background-color: #043c64;
-    width: 60%;
+    width : 30%;
     height: 500px;
-    display: flex;
-    justify-content: space-around;
     align-items: center;
+}
+
+h2{
+	font-size:30px;
+	font-family: 'Audiowide';
+	color: white;
+	text-decoration: underline;
 }
 
 .nomeBuild{
     text-decoration: none;
-    color: #043c64;
+    color: white;
+    font-family: 'Share Tech';
+    font-size: 25px;
 }
 
 .nomeBuild:hover{
-    text-decoration: underline;
-    text-decoration-color: #043c64; 
+    color: orange;
+    font-size: 27px;
+    transition-duration: 0.4s;
 }
 
 footer {

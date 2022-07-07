@@ -137,7 +137,7 @@ public class ComponenteController {
 		// usato per eliminare l'ingrediente da ogni piatto in cui è presente
 		for (BuildPC b : componenteService.buildDiComponente(c)) {
 			b.getComponenti().remove(c);
-		}
+	}
 	
 		// cancellazione ingrediente
 		componenteService.deleteById(id);
@@ -161,8 +161,10 @@ public class ComponenteController {
 		
 		Componente c = componenteService.componentePerId(componenteId);
         BuildPC build = buildService.buildPerId(buildId);
+        float prezzoFinale = build.getPrezzoTotale() - c.getPrezzo();
         
-        //elimino il collegamento da build a componente e viceversa        
+        //elimino il collegamento da build a componente e viceversa
+        build.setPrezzoTotale(prezzoFinale);
         build.getComponenti().remove(c);
         c.getBuildsComponenti().remove(build);
 		
