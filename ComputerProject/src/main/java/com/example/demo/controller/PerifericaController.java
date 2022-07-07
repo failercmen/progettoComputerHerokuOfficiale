@@ -152,6 +152,9 @@ public class PerifericaController {
   		
   		Periferica p = perifericaService.perifericaPerId(perifericaId);
           BuildPC build = buildService.buildPerId(buildId);
+          float prezzoFinale = build.getPrezzoTotale() - p.getPrezzo();
+         
+          build.setPrezzoTotale(prezzoFinale);
           
           //elimino il collegamento da build a componente e viceversa        
           build.getPeriferiche().remove(p);
