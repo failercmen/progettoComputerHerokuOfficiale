@@ -18,8 +18,8 @@
 			<h1>OFFLINESTORE</h1>
 		</div>
 		<div class="logout">
-			<a th:href="@{/logout}">Logout</a>
 			<p th:text="${#authentication.getPrincipal().getUsername()}"></p>
+			<a th:href="@{/logout}">Logout</a>
 		</div>
 	</header>
 	<div id="box">
@@ -64,6 +64,6 @@
             </span>
          </div>
       </div>
-    </div>
+    </div>   
 </body>
 </html>
