@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.BuildPC;
-
+import com.example.demo.model.Componente;
 import com.example.demo.repository.BuildPCRepository;
 
 @Service
@@ -47,6 +48,15 @@ public class BuildPCService {
 			return false;
 	}
 	
+//	@Transactional
+//	public List<Componente> buildsConComponente(){
+//		List<Componente> componenti = this.tutti();
+//		
+//		List<Componente> componenti2 = new ArrayList<Componente>();
+//		
+//		this.buildRepository.findAll();
+//		for(Componente c: )
+//	}
 
 
 	@Transactional
