@@ -104,9 +104,11 @@ public class PerifericaController {
         BuildPC build = buildService.buildPerId(buildId);
         Periferica periferica = perifericaService.perifericaPerId(perifericaId);
 
+        //set prezzo
+        Float prezzoFinale = build.getPrezzoTotale() + periferica.getPrezzo(); //uguale a 0 all'inzio
+        build.setPrezzoTotale(prezzoFinale);
+        
         build.getPeriferiche().add(periferica);
-        
-        
         //nuovo
         periferica.getBuildsPeriferiche().add(build);
         
@@ -141,4 +143,27 @@ public class PerifericaController {
 		
         return "admin/listaPeriferiche.html";
 	}
+    
+  //NUOVO
+  	//usato per rimuovere la componente dalla build
+  	@Transactional
+  	@GetMapping("/deletePerifericaDaBuild/{buildId}/{perifericaId}")
+      public String deleteComponenteDaBuild(@PathVariable("buildId") Long buildId, @PathVariable("perifericaId") Long perifericaId, Model model) {
+  		
+  		Periferica p = perifericaService.perifericaPerId(perifericaId);
+          BuildPC build = buildService.buildPerId(buildId);
+          
+          //elimino il collegamento da build a componente e viceversa        
+          build.getPeriferiche().remove(p);
+          p.getBuildsPeriferiche().remove(build);
+  		
+          model.addAttribute("build", build);
+          model.addAttribute("ListaComponenti", this.componenteService.tutti());
+          model.addAttribute("ListaPeriferiche", this.perifericaService.tutti());
+          model.addAttribute("Componenti", build.getComponenti());
+          model.addAttribute("Periferiche", build.getPeriferiche());
+          
+          return "build.html";
+  	}
+    
 }

@@ -106,11 +106,15 @@ public class ComponenteController {
     public String impostaComponente(@PathVariable("buildId") Long buildId, @PathVariable("componenteId") Long componenteId, Model model) {
         BuildPC build = buildService.buildPerId(buildId);
         Componente componente = componenteService.componentePerId(componenteId);
-
-        build.getComponenti().add(componente);
         
+        //set prezzo
+        Float prezzoFinale = build.getPrezzoTotale() + componente.getPrezzo(); //uguale a 0 all'inzio
+        build.setPrezzoTotale(prezzoFinale);
+        
+        build.getComponenti().add(componente);
         //nuovo
         componente.getBuildsComponenti().add(build);
+        
         
         componenteService.inserisci(componente);
         
@@ -147,5 +151,27 @@ public class ComponenteController {
 		model.addAttribute("listaMemorie", this.componenteService.memorieComponenti());	
 		
 		return "admin/listaComponenti.html";
+	}
+	
+	//NUOVO
+	//usato per rimuovere la componente dalla build
+	@Transactional
+	@GetMapping("/deleteComponenteDaBuild/{buildId}/{componenteId}")
+    public String deleteComponenteDaBuild(@PathVariable("buildId") Long buildId, @PathVariable("componenteId") Long componenteId, Model model) {
+		
+		Componente c = componenteService.componentePerId(componenteId);
+        BuildPC build = buildService.buildPerId(buildId);
+        
+        //elimino il collegamento da build a componente e viceversa        
+        build.getComponenti().remove(c);
+        c.getBuildsComponenti().remove(build);
+		
+        model.addAttribute("build", build);
+        model.addAttribute("ListaComponenti", this.componenteService.tutti());
+        model.addAttribute("ListaPeriferiche", this.perifericaService.tutti());
+        model.addAttribute("Componenti", build.getComponenti());
+        model.addAttribute("Periferiche", build.getPeriferiche());
+        
+        return "build.html";
 	}
 }
