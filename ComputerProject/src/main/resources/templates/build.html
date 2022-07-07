@@ -24,26 +24,30 @@
 	</header>
 	<div id="box">
 		<div id="descCase">
-			<h2>Prezzo totale</h2>
-			Euro: <span th:text="${build.prezzoTotale}"></span>
-			<!-- <span th:text="${case.prezzo}">Prezzo </span> -->
+			<h2 th:text="${build.nome}"></h2>
+			<h3>Prezzo totale:</h3>
+			<span th:text="${build.prezzoTotale}" ></span>
 		</div>
 		<div id = "descComponente">
         <h2>Componenti</h2>
-            <span th:each="componente : ${Componenti}">
-                Nome: <span th:text="${componente.nome}">Nome componente</span><br>
-            </span>
+            <span th:each="componente : ${Componenti}"> 
+            <span th:text="${componente.tipologia} + ':' ">Tipologia</span> 
+                <a class="pezzo" href="componente.html" th:href="@{'/componente' +'/' + ${componente.id} }" th:text="${componente.nome}">Nome componente</a> 
+                <a class="delete" th:href="@{'/deleteComponenteDaBuild' + '/' + ${build.id} + '/' + ${componente.id} }">Cancella<br></a>
+       		</span>
       </div>
       <div id = "descPeriferica">
          <h2>Periferiche</h2>
-             <span th:each="periferica : ${Periferiche}">
-                Nome: <span th:text="${periferica.nome}">Nome periferica</span><br>
+          <span th:each="periferica : ${Periferiche}">
+          	<span th:text="${periferica.tipologia} + ':' ">Tipologia</span> 
+          		<a class="pezzo" href="periferica.html" th:href="@{'/periferica' +'/' + ${periferica.id} }" th:text="${periferica.nome}">Nome componente</a> 
+          		<a class="delete" th:href="@{'/deletePerifericaDaBuild' + '/' + ${build.id} + '/' + ${periferica.id} }">Cancella<br></a>
             </span>
       </div>
     </div>
     <div id = "impostaBox">
     <div class = "impostaComponenti">
-        <h3>Componenti</h3>
+        <h3>Componenti</h3>        
         <div th:each="componente : ${ListaComponenti}">
             Nome: <span th:text="${componente.nome}">Nome componente</span><br>
             <span>
