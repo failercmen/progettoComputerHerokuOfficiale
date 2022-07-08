@@ -23,8 +23,8 @@
 		</div>
 	</header>
 	<div id="box">
-		<div id="descCase">
-			<h2 th:text="${build.nome}"></h2>
+		<div id="descCase">							<!--nuovo......vedi se cancellare-->
+			<h2 th:text="${build.nome}"></h2> <a th:href="@{'/updateBuild' + '/' + ${build.id} }"> <Strong>MODIFICA BUILD</Strong>  </a>
 			<h3>Prezzo totale:</h3>
 			<span th:text="${build.prezzoTotale}" ></span>
 		</div>
