@@ -119,5 +119,34 @@ public class BuildPCController {
 
 		return "listaBuild.html";
 	}
+	
+	
+	//nuovo
+	@RequestMapping(value = "/updateBuild/{idBuildPC}", method = RequestMethod.GET)
+	public String updateBuildEsistente(@PathVariable("idBuildPC") Long idBuildPC, Model model) {
+
+		model.addAttribute("build", this.buildService.buildPerId(idBuildPC));
+		
+		return "buildUpdate.html";
+	}
+	
+	
+	
+	//nuovo
+	@RequestMapping(value = "/updateBuild/{idBuildPC}", method =
+			RequestMethod.POST)
+	public String updateBuildEsistente(@ModelAttribute BuildPC buildPC,@PathVariable("idBuildPC")
+	Long idBuildPC,Model model) {
+	//TODO ricorda di aggiungere il collegamento verso il buffet
+							
+		//lascialo
+		this.buildService.updateBuild(idBuildPC, buildPC);
+				
+		
+		model.addAttribute("ListaBuild", this.buildService.tutti());
+
+		return "listaBuild.html";
+	}
+	
 
 }

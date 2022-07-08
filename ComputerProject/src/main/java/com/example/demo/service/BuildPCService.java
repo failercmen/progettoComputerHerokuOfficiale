@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.BuildPC;
-import com.example.demo.model.Componente;
+
 import com.example.demo.repository.BuildPCRepository;
 
 @Service
@@ -48,20 +47,30 @@ public class BuildPCService {
 			return false;
 	}
 	
-//	@Transactional
-//	public List<Componente> buildsConComponente(){
-//		List<Componente> componenti = this.tutti();
-//		
-//		List<Componente> componenti2 = new ArrayList<Componente>();
-//		
-//		this.buildRepository.findAll();
-//		for(Componente c: )
-//	}
-
 
 	@Transactional
 	public void deleteById(Long id) {
 		buildRepository.deleteById(id);
+	}
+	
+	
+	@Transactional
+	public void updateBuild(Long idBuildPC, BuildPC buildNuovo) {
+		// prova a inserire un buffet e tutte le sue variabili,
+		// prendendo di riferimento queste setti tutte le variabili come quello nuovo
+		BuildPC buildPC = this.buildPerId(idBuildPC);
+		
+		buildPC.setNome(buildNuovo.getNome());
+		buildPC.setDescrizione(buildNuovo.getDescrizione());		
+//		for(Componente c: buildPC.getComponenti()) {
+//			c.getBuildsComponenti().add(buildPC);
+//		}
+//		
+//		for(Periferica p: buildPC.getPeriferiche()) {
+//			p.getBuildsPeriferiche().add(buildPC);
+//		}
+		
+		buildRepository.save(buildPC);
 	}
 	
 
