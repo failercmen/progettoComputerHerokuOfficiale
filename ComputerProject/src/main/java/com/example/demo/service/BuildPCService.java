@@ -48,10 +48,29 @@ public class BuildPCService {
 	}
 	
 
-
 	@Transactional
 	public void deleteById(Long id) {
 		buildRepository.deleteById(id);
+	}
+	
+	
+	@Transactional
+	public void updateBuild(Long idBuildPC, BuildPC buildNuovo) {
+		// prova a inserire un buffet e tutte le sue variabili,
+		// prendendo di riferimento queste setti tutte le variabili come quello nuovo
+		BuildPC buildPC = this.buildPerId(idBuildPC);
+		
+		buildPC.setNome(buildNuovo.getNome());
+		buildPC.setDescrizione(buildNuovo.getDescrizione());		
+//		for(Componente c: buildPC.getComponenti()) {
+//			c.getBuildsComponenti().add(buildPC);
+//		}
+//		
+//		for(Periferica p: buildPC.getPeriferiche()) {
+//			p.getBuildsPeriferiche().add(buildPC);
+//		}
+		
+		buildRepository.save(buildPC);
 	}
 	
 
