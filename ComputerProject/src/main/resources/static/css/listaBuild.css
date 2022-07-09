@@ -43,6 +43,17 @@ h1 {
     color: white;
 }
 
+.elimina{
+	margin-left: 10px;
+	font-family: 'Audiowide';
+	text-decoration:none;
+	color:orange;
+}
+
+.elimina:hover{
+	color:red;	
+}
+
 #listaCompleta {
 	display: flex;
 	flex-direction: column;

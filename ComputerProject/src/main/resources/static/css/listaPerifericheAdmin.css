@@ -22,6 +22,16 @@ header img{
 	width: 100%;
 }
 
+.logout {
+	font-family: 'Share Tech';
+	color: white;
+}
+
+.logout a{
+	text-decoration: none;
+	color:white;
+}
+
 h1 {
     font-family: 'Audiowide';
     font-size: 50px;
@@ -34,8 +44,9 @@ h1 {
 }
 
 .elimina{
+	font-family: 'Audiowide';
 	text-decoration: none;
-	color: white;
+	color: orange;
 }
 
 .elimina:hover{
@@ -46,7 +57,7 @@ h1 {
     margin-top: 100px;
     border-radius: 10px;
     background-color: #043c64;
-    width: 60%;
+    width: 75%;
     height: 500px;
     display: flex;
     justify-content: space-around;
@@ -64,12 +75,16 @@ h1 {
 
 .nome{
 	text-decoration: none;
+	font-family: 'Share Tech';
+	font-size:25px;
 	color: #043c64;
 }
 
 .nome:hover{
-	text-decoration: underline;
-	text-decoration-color: #043c64; 
+	text-decoration: none;
+	color: orange;
+	transition-duration: 0.4s;
+	font-size:27px;
 }
 
 h3 {
