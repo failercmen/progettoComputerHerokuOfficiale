@@ -24,7 +24,7 @@
 	</header>
 	<div id="box">
 		<div id="descCase">							<!--nuovo......vedi se cancellare-->
-			<h2 th:text="${build.nome}"></h2> <a th:href="@{'/updateBuild' + '/' + ${build.id} }"> <Strong>MODIFICA BUILD</Strong>  </a>
+			<h2 th:text="${build.nome}"></h2> <a class="update" th:href="@{'/updateBuild' + '/' + ${build.id} }"> <Strong>MODIFICA BUILD</Strong>  </a>
 			<h3>Prezzo totale:</h3>
 			<span th:text="${build.prezzoTotale}" ></span>
 		</div>
@@ -49,7 +49,7 @@
     <div class = "impostaComponenti">
         <h3>Componenti</h3>        
         <div th:each="componente : ${ListaComponenti}">
-            Nome: <span th:text="${componente.nome}">Nome componente</span><br>
+            <span th:text="${componente.tipologia} + ':' ">Tipologia</span><span th:text="${componente.nome}">Nome componente</span>
             <span>
                 <a class = "button" th:href="@{'/buildComponente' + '/' + ${build.id} + '/' + ${componente.id}}"> Assegna componente</a><br><br>
             </span>
@@ -58,12 +58,23 @@
       <div class = "impostaPeriferiche">
            <h3>Periferiche</h3>
             <div th:each="periferica : ${ListaPeriferiche}">
-            Nome: <span th:text="${periferica.nome}">Nome periferica</span><br>
+            <span th:text="${periferica.tipologia} + ':' ">Tipologia</span><span th:text="${periferica.nome}">Nome periferica</span>
             <span>
                 <a class = "button" th:href="@{'/buildPeriferica' + '/' + ${build.id} + '/' + ${periferica.id}}"> Assegna periferica</a><br><br>
             </span>
          </div>
       </div>
-    </div>  
+    </div>
+    <footer>
+		<div>
+			<img
+				src="https://us.123rf.com/450wm/sdcrea/sdcrea1609/sdcrea160902427/63257603-musica-concept-design-con-l-auricolare-.jpg?ver=6">
+			<h3>Hai bisogno di supporto? Contattaci!</h3>
+		</div>
+		<div>
+			<h4>OfflineStore realizzato da:</h4>
+			Andrea Evangelista-Alessia Di Silvestre-Andrea Cipriani
+		</div>
+	</footer> 
 </body>
 </html>
