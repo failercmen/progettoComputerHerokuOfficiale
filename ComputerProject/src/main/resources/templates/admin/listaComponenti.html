@@ -24,7 +24,7 @@
 		</div>
 		<div class="logout">
 			<p th:text="${#authentication.getPrincipal().getUsername()}"></p>
-			LOGOUT
+			<a th:href="@{/logout}">Logout</a>
 		</div>
 	</header>
 	<div class="centralBox">
@@ -34,7 +34,6 @@
 					<a class = "nome" href="admin/Componente.html"
 						th:href="@{'/admin/componente' + '/' + ${case.id}}"
 						th:text="${case.nome}">case</a>
-
 					<span>
                	  		<a class = "elimina" th:href="@{'/admin/deleteComponente' + '/' + ${case.id}}">Elimina</a>
                		</span>

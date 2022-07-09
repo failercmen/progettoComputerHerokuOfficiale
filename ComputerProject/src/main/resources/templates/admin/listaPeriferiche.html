@@ -24,7 +24,7 @@
 		</div>
 		<div class="logout">
 			<p th:text="${#authentication.getPrincipal().getUsername()}"></p>
-			LOGOUT
+			<a th:href="@{/logout}">Logout</a>
 		</div>
 	</header>
 	<div class="centralBox">
@@ -34,11 +34,9 @@
 			<h3>Display</h3>
 			<div th:if="${listaDisplay != null}" >
 				<div th:each="display : ${listaDisplay}">
-
 					<a class = "nome" href="admin/Periferica.html"
 						th:href="@{'/admin/periferica' + '/' + ${display.id}}"
 						th:text="${display.nome}">Nome Display</a>
-					<!-- metti Delete -->
 					<span>
                			<a class = "elimina" th:href="@{'/admin/deletePeriferica' + '/' + ${display.id}}">Elimina</a>
             		</span>

@@ -32,8 +32,8 @@
                   <span><a class = "nomeBuild" href="build.html" th:href="@{'/build' + '/' + ${build.id}}" 
                  th:text="${build.nome}">Nome build</a>
                    </span>
-                  <span class="elimina">
-                      <a th:href="@{'/deleteBuild' + '/' + ${build.id}}">Elimina</a>
+                  <span>
+                      <a class="elimina" th:href="@{'/deleteBuild' + '/' + ${build.id}}">Elimina</a>
                    </span>
             </div>
       </div>
