@@ -1,0 +1,74 @@
+#content{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items: center;
+	height: 100vh;
+}
+
+.box{
+	position:relative;
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+	justify-content: center;
+	background-color: #043c64;
+	opacity: 0.9;
+	border: 5px solid #043c64;
+	width:500px;
+	height:360px;
+	border-radius: 20px;
+}
+
+img{
+	position:absolute;
+	width:25%;
+	bottom:320px;
+}
+
+h1{
+	font-family: 'Audiowide';
+	animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+	0% {
+		color: red;
+		opacity: 0;
+ 	}
+  
+	50% {
+		color: red;
+		opacity: 0.7;
+	}
+	
+	100% {
+		color: red;
+		opacity: 0;
+	}
+}
+
+p{	
+	color: white;
+	font-size:20px;
+	font-family: 'Share Tech';
+}
+
+a{	
+	color: orange;
+	text-decoration: none;
+	font-size:20px;
+	font-family: 'Share Tech';
+}
+
+a:hover{
+	font-size:22px;
+	transition-duration: 0.4s;
+}
+#myVideo{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	z-index: -1;
+}

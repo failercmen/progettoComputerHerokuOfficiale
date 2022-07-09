@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Piatto</title>
-<style></style>
-<script></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pagina login</title>
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+</style>
+<link href="/css/failure.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-	<div>
-		
-		Username o Password sbagliati
-		
+	<video autoplay muted loop id="myVideo">
+		<source src="/images/circuiti.mp4" type="video/mp4">
+	</video>
+	<div id="content">
+		<div class="box">
+			<img src="/images/Utente.png">
+			<h1>LOGIN FALLITO</h1>
+			<p>Username o Password sbagliati</p>
+			<a th:href="@{/login}">Torna a login</a>
 		</div>
-
-<hr>
-
-	<footer>
-		<a th:href="@{/login}">Torna a login</a> 
-	</footer>
-
+	</div>
 </body>
 </html>

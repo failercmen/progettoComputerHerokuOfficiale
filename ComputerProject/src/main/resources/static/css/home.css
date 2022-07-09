@@ -166,6 +166,8 @@ section {
 	background-color: #31cbed;
 	color: white;
 	transform: rotateX(180deg);
+	text-align: center;
+	font-family: 'Audiowide';
 }
 
 .flip-box-inner2 {
@@ -189,6 +191,8 @@ section {
 	background-color: #31cbed;
 	color: white;
 	transform: rotateX(180deg);
+	text-align: center;
+	font-family: 'Audiowide';
 }
 
 .flip-box-inner3 {
@@ -212,6 +216,8 @@ section {
 	background-color: #31cbed;
 	color: white;
 	transform: rotateX(180deg);
+	text-align: center;
+	font-family: 'Audiowide';
 }
 
 .fascia {
