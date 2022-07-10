@@ -37,15 +37,18 @@ public class BuildPCValidator implements Validator {
 		else if (nome.length() < MIN_NAME_LENGTH || nome.length() > MAX_NAME_LENGTH)
 			errors.rejectValue("nome", "size");
 		
-		else if (desc.isEmpty())
+		else if(this.buildPCservice.alreadyExistsByNome(build))
+			errors.rejectValue("nome", "duplicate");
+		
+		 if (desc.isEmpty())
 			errors.rejectValue("descrizione", "required");
 	
-		else if (nome.length() < MIN_DESC_LENGTH || nome.length() > MAX_DESC_LENGTH)
+		 else if (desc.length() < MIN_DESC_LENGTH || nome.length() > MAX_DESC_LENGTH)
 			errors.rejectValue("descrizione", "size");
 
-		//TODO controlla se funziona bene
-				else if(this.buildPCservice.alreadyExists(build))
-					errors.rejectValue("nome","duplicate");
+//		//TODO controlla se funziona bene
+//				else if(this.buildPCservice.alreadyExists(build))
+//					errors.rejectValue("nome","duplicate");
 	}
 	
 }

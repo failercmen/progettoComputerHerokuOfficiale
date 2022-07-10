@@ -65,18 +65,18 @@ public class BuildPCController {
 
 	@RequestMapping(value = "/buildPC/{id}", method = RequestMethod.GET)
 	public String getChef(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("chef", this.buildService.buildPerId(id));
-		return "chef";
+		model.addAttribute("build", this.buildService.buildPerId(id));
+		return "build";
 	}
 
 	@RequestMapping(value = "/buildForm", method = RequestMethod.GET)
 	public String addBuffet(Model model) {
-		model.addAttribute("build", new BuildPC());
+		model.addAttribute("buildPC", new BuildPC());
 		return "buildForm.html";
 	}
 
 	@RequestMapping(value = "/listaBuild", method = RequestMethod.POST)
-	public String addProdotto(@ModelAttribute("ListaBuild") BuildPC build, Model model, BindingResult BindingResult) {
+	public String addProdotto(@ModelAttribute("buildPC") BuildPC build, Model model, BindingResult BindingResult) {
 		this.buildValidator.validate(build, BindingResult);
 
 		if (!BindingResult.hasErrors()) {
@@ -84,6 +84,7 @@ public class BuildPCController {
 			model.addAttribute("ListaBuild", this.buildService.tutti());
 			return "listaBuild.html";
 		}
+		
 		return "buildForm.html";
 	}
 

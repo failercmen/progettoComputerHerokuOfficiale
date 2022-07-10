@@ -38,6 +38,7 @@ h1{
 	color:white;
 }
 
+
 .box{
   display: flex;
   justify-content: center;
@@ -52,6 +53,7 @@ h1{
   border-radius:16px;
   text-align: center;
 }
+
 
 .box h2{
   font-family: 'Audiowide';
@@ -68,6 +70,19 @@ h1{
  	font-family: 'Share Tech';
   	color: white;
 }
+
+.box h3{
+  	position: relative;
+ 	z-index:10;
+ 	font-family: 'Share Tech';
+  	color: red;
+}
+
+.box span{
+  z-index:10;
+  color: white;
+}
+
 
 input{
 	width:100%;
