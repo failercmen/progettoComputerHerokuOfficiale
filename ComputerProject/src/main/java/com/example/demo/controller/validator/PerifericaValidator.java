@@ -24,7 +24,8 @@ public class PerifericaValidator implements Validator {
 	public void validate(Object o, Errors errors) {
 		Periferica p = (Periferica) o;
 		String nome = p.getNome().trim();
-		String desc = p.getDescrizione();
+		String desc = p.getDescrizione().trim();
+		String tip = p.getTipologia().trim();
 
 		if (nome.isEmpty())
 			errors.rejectValue("nome", "required");
@@ -42,7 +43,13 @@ public class PerifericaValidator implements Validator {
 		else if(this.perifericaService.alreadyExists(p))
 			errors.rejectValue("nome" ,"duplicate");
 		
+		//nuovo
+		else if( !tip.equals("display") || !tip.equals("tastiera") || !tip.equals("mouse")
+			||	!tip.equals("cuffia") )
+			errors.rejectValue("tipologia", "inesistente");
 	}
+		
+	
 
 	@Override
 	public boolean supports(Class<?> clazz) {

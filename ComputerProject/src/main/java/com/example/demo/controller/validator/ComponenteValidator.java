@@ -55,6 +55,12 @@ public class ComponenteValidator implements Validator {
 		else if (this.componenteService.alreadyExistsByNome(comp)
 				&& this.componenteService.alreadyExistsByTipologia(comp))
 			errors.rejectValue("nome", "duplicate");
+		
+		//nuovo
+		else if( !tip.equals("case") || !tip.equals("scheda madre") || !tip.equals("scheda video")
+			||	!tip.equals("cpu") || !tip.equals("ram") ||  !tip.equals("alimentatore") 
+			||	!tip.equals("cooling")|| !tip.equals("memoria"))
+			errors.rejectValue("tipologia", "inesistente");
 	}
 
 }

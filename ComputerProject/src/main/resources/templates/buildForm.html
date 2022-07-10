@@ -23,12 +23,20 @@
 			<a th:href="@{/logout}">Logout</a>
 		</div>
 	</header>
-	<form th:action="@{/listaBuild}" method="POST" th:object="${build}">
+	<form th:action="@{/listaBuild}" method="POST" th:object="${buildPC}">
 	<div class="box">
 		<h2>Dai un nome e una descrizione alla tua build</h2>
 		<div class="text">
-			Nome: <span><input type="text" th:field="*{nome}" required/></span><br>
-			Descrizione: <span><input type="text" th:field="*{descrizione}"  required/></span><br>
+			<span>Nome:</span> 
+			<span><input type="text" th:field="${buildPC.nome}" required/></span>	
+			<span th:if="${#fields.hasErrors('nome')}"
+				th:errors="*{nome}" th:style="'color:red'"></span>  	
+			<br>
+			<span>Descrizione: </span> 
+			<span><input type="text" th:field="${buildPC.descrizione}" required ></span>
+		    <span th:if="${#fields.hasErrors('descrizione')}"
+		     th:errors="*{descrizione}" th:style="'color:red'"></span>
+			<br>
 		</div>
 		<div id="bottone">
 			<span><button type="submit">Crea</button></span>

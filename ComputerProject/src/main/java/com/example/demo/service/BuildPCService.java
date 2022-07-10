@@ -39,7 +39,7 @@ public class BuildPCService {
 	}
 
 	@Transactional
-	public boolean alreadyExists(BuildPC build) {
+	public boolean alreadyExistsByNome(BuildPC build) {
 		List<BuildPC> builds = this.buildRepository.findByNome(build.getNome());
 		if (builds.size() > 0)
 			return true;
