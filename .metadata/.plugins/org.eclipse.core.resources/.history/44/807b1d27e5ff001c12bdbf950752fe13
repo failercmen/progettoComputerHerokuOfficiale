@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Build Form</title>
+<link href="/css/buildForm.css" rel="stylesheet" type="text/css">
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap')
+	;
+@import
+	url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap')
+	;
+</style>
+</head>
+<body>
+	<header>
+		<a th:href="@{/home}"><img src="/images/logo.png"></a>
+		<div class="titolo">
+			<h1>OFFLINESTORE</h1>
+		</div>
+		<div class="logout">
+			<p th:text="${#authentication.getPrincipal().getUsername()}"></p>
+			<a th:href="@{/logout}">Logout</a>
+		</div>
+	</header>
+	<form th:action="@{/listaBuild}" method="POST" th:object="${build}">
+	<div class="box">
+		<h2>Dai un nome e una descrizione alla tua build</h2>
+		<div class="text">
+			<span>Nome:</span> 
+			<span><input type="text" th:field="*{nome}" required/></span>	
+			<span class="errore" th:if="${#fields.hasErrors('nome')}"
+				th:errors="*{nome}" th:style="'color:red'"></span>  	
+			<br>
+			<span>Descrizione: </span><span><input type="text" th:field="*{descrizione}" required >
+		<span th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}"
+			 th:style="'color:red'"></span>	/></span>
+			<br>
+		</div>
+		<div id="bottone">
+			<span><button type="submit">Crea</button></span>
+		</div>
+	</div>
+	</form>
+	
+	<footer>
+		<div>
+			<img
+				src="https://us.123rf.com/450wm/sdcrea/sdcrea1609/sdcrea160902427/63257603-musica-concept-design-con-l-auricolare-.jpg?ver=6">
+			<h3>Hai bisogno di supporto? Contattaci!</h3>
+		</div>
+		<div>
+			<h4>OfflineStore realizzato da:</h4>
+			Andrea Evangelista-Alessia Di Silvestre-Andrea Cipriani
+		</div>
+	</footer>
+</body>
+</html>

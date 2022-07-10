@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="widht=device-widht, initial-scale=1">
+<title>Lista build</title>
+<link href="/css/listaBuild.css" rel="stylesheet" type="text/css">
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+</style>
+<script></script>
+</head>
+<body>
+    <header>
+        <a th:href="@{/home}"><img src="/images/logo.png"></a>
+        <div class="titolo">
+            <h1>OFFLINESTORE</h1>
+        </div>
+        <div class="logout">
+            <p th:text="${#authentication.getPrincipal().getUsername()}"></p>
+            <a th:href="@{/logout}">Logout</a>
+        </div>
+    </header>
+      <div id = "listaCompleta">
+      	<h2> Le mie build </h2>
+            <div th:each="build : ${ListaBuild}">
+                  <span><a class = "nomeBuild" href="build.html" th:href="@{'/build' + '/' + ${build.id}}" 
+                 th:text="${build.nome}">Nome build</a>
+                   </span>
+                  <span class="elimina">
+                      <a th:href="@{'/admin/cancellaBuild' + '/' + ${build.id}}">Elimina</a>
+                   </span>
+            </div>
+      </div>
+      <footer>
+        <div>
+            <img src="https://us.123rf.com/450wm/sdcrea/sdcrea1609/sdcrea160902427/63257603-musica-concept-design-con-l-auricolare-.jpg?ver=6">
+            <h3>Hai bisogno di supporto? Contattaci!</h3>
+        </div>
+        <div>
+            <h4>OfflineStore realizzato da:</h4>
+            Andrea Evangelista-Alessia Di Silvestre-Andrea Cipriani
+        </div>
+    </footer>
+</body>
+</html>

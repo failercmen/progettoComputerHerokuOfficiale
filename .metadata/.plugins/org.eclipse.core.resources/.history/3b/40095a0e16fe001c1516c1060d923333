@@ -1,0 +1,63 @@
+package com.example.demo.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.BuildPC;
+
+import com.example.demo.repository.BuildPCRepository;
+
+@Service
+public class BuildPCService {
+
+	@Autowired
+	private BuildPCRepository buildRepository; 
+	
+
+	@Transactional
+	public BuildPC inserisci(BuildPC build) {
+		return buildRepository.save(build);
+	}
+
+	@Transactional
+	public List<BuildPC> tutti() {
+		return (List<BuildPC>) buildRepository.findAll();
+	}
+
+	@Transactional
+	public BuildPC buildPerId(Long id) {
+		Optional<BuildPC> optional = buildRepository.findById(id);
+		if (optional.isPresent())
+			return optional.get();
+		else 
+			return null;
+	}
+
+	@Transactional
+	public boolean alreadyExists(BuildPC build) {
+		List<BuildPC> builds = this.buildRepository.findByNome(build.getNome());
+		if (builds.size() > 0)
+			return true;
+		else 
+			return false;
+	}
+	
+	@Transactional
+	public List<Componente> buildConComponente(){
+		List<Componente> componenti = new ArrayList<Componente>();
+	}
+
+
+	@Transactional
+	public void deleteById(Long id) {
+		buildRepository.deleteById(id);
+	}
+	
+
+}

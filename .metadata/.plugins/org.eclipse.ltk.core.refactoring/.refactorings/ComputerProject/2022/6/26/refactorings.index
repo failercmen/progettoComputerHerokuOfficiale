@@ -1,0 +1,12 @@
+1656513217225	Move file
+1656514535737	Move compilation unit
+1656515491719	Rename type 'Componenti'
+1656515530650	Rename type 'ComponentiService'
+1656515544033	Rename type 'ComponentiRepository'
+1656515562056	Rename type 'ComponentiValidator'
+1656515576108	Rename type 'ComponentiController'
+1656516043564	Rename type 'PerifericheController'
+1656516056043	Rename type 'PerifericheValidator'
+1656516073232	Rename type 'Periferiche'
+1656516088922	Rename type 'PerifericheRepository'
+1656516104506	Rename type 'PerifericheService'

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Titolo Pagina</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap');
+    </style>
+    <script></script>
+    <link rel="stylesheet" href="/css/componente.css">
+  </head>
+  <body>
+    <header>
+            <a th:href="@{/admin/home}"><img src="/images/logo.png"></a>
+
+        <div class="titolo">
+            <h1>OFFLINESTORE</h1>
+         </div>
+         <div class="logout">
+          <p th:text="${#authentication.getPrincipal().getUsername()}"></p>
+              LOGOUT
+          </div>
+    </header>
+ 	<div id = "box">
+      <div id = "boxItem">
+        <h2>Componente</h2>
+        <div class = "text">
+        Nome: <span th:text="*{nome}">Nome </span><br><br>
+        Descrizione: <span th:text="*{descrizione}">Descrizione </span><br><br>
+        Tipologia: <span th:text="*{tipologia}">Tipologia </span><br><br>
+        Prezzo: <span th:text="*{prezzo}">Prezzo </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

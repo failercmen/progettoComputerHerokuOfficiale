@@ -1,0 +1,152 @@
+body{
+	background-color: #e6ecf0;
+  	display:flex;
+  	align-items: center;
+  	flex-direction:column;
+}
+
+header{
+  width:100%;
+  height:150px;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  background-color: #043c64;
+}
+
+header a {
+    width: 12%;
+}
+
+header img{
+    width: 100%;
+}
+
+h1{
+  font-family: 'Audiowide';
+  font-size:50px;
+  color: white;
+}
+
+.logout {
+	font-family: 'Share Tech';
+	color: white;
+}
+
+.logout a{
+	text-decoration: none;
+	color:white;
+}
+
+
+.box{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction:column;
+  margin-top: 40px;
+  width:500px;
+  height:500px;
+  background-color: #043c64;
+  position: relative;
+  overflow: hidden;
+  border-radius:16px;
+  text-align: center;
+}
+
+
+.box h2{
+  font-family: 'Audiowide';
+  position: relative;
+  bottom:150px;
+  z-index:10;
+  color: white;
+}
+
+.box div{
+  	position: relative;
+ 	bottom:150px;
+ 	z-index:10;
+ 	font-family: 'Share Tech';
+  	color: white;
+}
+
+.box h3{
+  	position: relative;
+ 	z-index:10;
+ 	font-family: 'Share Tech';
+  	color: red;
+}
+
+.box span{
+  bottom:150px;
+  z-index:10;
+  color: white;
+}
+
+
+input{
+	width:100%;
+}
+
+button{
+	margin-top:15px;
+	font-family: 'Share Tech';
+	font-size: 15px;
+}
+
+button:hover{
+	color: orange;
+	transition-duration: 0.4s;
+	font-size: 20px;
+}
+
+.box::before{
+  content:'';
+  position:absolute;
+  bottom:5x;
+  width:200px;
+  height:140%;
+ background: linear-gradient(#31cbed,#ffa500);
+  animation: animate 4s linear infinite;
+}
+
+.box::after{
+  content:'';
+  position: absolute;
+  inset: 5px;
+  background: #043c64;
+}
+
+@keyframes animate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+footer {
+	margin-top: 150px;
+	border: 2px solid;
+	width: 100%;
+	height: 100px;
+	display: flex;
+	font-family: 'Share Tech';
+	font-size: 15px;
+	background-color: #436d8b;
+	color: white;
+}
+
+footer img {
+	width: 10%;
+	border-radius: 50%;
+}
+
+footer div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40%;
+}

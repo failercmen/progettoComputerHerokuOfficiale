@@ -1,0 +1,200 @@
+body{
+  background-color: #e6ecf0;
+  display:flex;
+  align-items: center;
+  flex-direction:column;
+}
+
+header{
+  width:100%;
+  height:150px;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  background-color: #043c64;
+}
+
+header img{
+  width:13%;
+}
+
+h1{
+  font-family: 'Audiowide';
+  font-size:50px;
+  color: white;
+}
+
+.logout{
+  font-family: 'Share Tech';
+  color: white;
+}
+
+nav{
+  width:100%;
+  height:50px;
+  background-color: #436d8b;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  font-family: 'Share Tech';
+  color: white;
+  font-size:20px;
+}
+
+.opzioni:hover{
+  transition-duration:0.4s;
+  font-size:23px;
+}
+
+section{
+  background-color: #043c64;
+  width:100%;
+  height:300px;
+  margin-top:50px;
+  display:flex;
+  align-items:center;
+  justify-content: space-around;
+}
+
+.flip-box{
+  background-color: transparent;
+  width: 20%;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.flip-box-inner1 {
+  display:flex;
+  align-items:center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner1,.flip-box:hover .flip-box-inner2, .flip-box:hover .flip-box-inner3 {
+  transform: rotateX(180deg);
+}
+
+.flip-box-front1, .flip-box-back1, .flip-box-front2, .flip-box-back2, .flip-box-front3, .flip-box-back3 {
+  border-radius:10px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  
+}
+
+.flip-box-front1 {
+  background-image: url("https://i.pinimg.com/564x/25/c3/d9/25c3d9a25ebbbbc272e8caf484ac07c0.jpg");
+  background-size:cover;
+  color: black;
+}
+
+.flip-box-back1{
+  background-color: #31cbed;
+  color: white;
+  transform: rotateX(180deg);
+}
+
+.flip-box-inner2 {
+  display:flex;
+  align-items:center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box-front2 {
+  background-image: url("http://geekawhat.com/wp-content/uploads/2022/05/H7-Elite-Angled.jpg");
+  background-size:cover;
+  color: black;
+}
+
+.flip-box-back2{
+  background-color: #31cbed;
+  color: white;
+  transform: rotateX(180deg);
+}
+
+.flip-box-inner3 {
+  display:flex;
+  align-items:center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box-front3 {
+  background-image: url("https://nzxt.com/assets/cms/34299/1648684081-creator-pc-hero-white.png?fit=max&fm=jpg&w=1000");
+  background-size:cover;
+  color: black;
+}
+
+.flip-box-back3{
+  background-color: #31cbed;
+  color: white;
+  transform: rotateX(180deg);
+}
+
+.fascia{
+  margin-top:50px;
+  width:100%;
+  height:300px;
+  background-image: url("https://cdn.discordapp.com/attachments/989638080879280148/992800557725143160/vecteezy_vector-abstract-background-with-soft-gradient-color-and_6404545.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slogan{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:60%;
+  height: 120px;
+  text-align: center;
+  color: #31cbed;
+  font-family: 'Audiowide';
+  font-size: 20px;
+  border-radius: 15px;
+  background-image: url("https://cutewallpaper.org/21/opacity-background-image/Lumin8-Events-Webpage-background-image-50-opacity.png");
+}
+
+footer{
+  margin-top:50px;
+  border: 2px solid;
+  width:100%;
+  height: 100px;
+  display: flex;
+  font-family: 'Share Tech';
+  font-size:15px;
+  background-color: #436d8b;
+  color:white;
+}
+
+footer img{
+  width:10%;
+  border-radius:50%;
+}
+
+footer div{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:40%;
+}

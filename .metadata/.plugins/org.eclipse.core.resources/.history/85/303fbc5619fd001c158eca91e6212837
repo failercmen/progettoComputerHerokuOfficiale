@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Build</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap');
+    </style>
+    <script></script>
+    <link rel="stylesheet" href="/css/build.css">
+  </head>
+  <body>
+    <header>
+            <img src="https://image.similarpng.com/very-thumbnail/2021/01/Twitch-icon-isolated-on-transparent-background-PNG.png">
+
+        <div class="titolo">
+            <h1>OFFLINESTORE</h1>
+         </div>
+         <div class="logout">
+          <p th:text="${#authentication.getPrincipal().getUsername()}"></p>
+              LOGOUT
+          </div>
+    </header>
+     <div id = "box">
+      <div id = "descCase">
+        <h2>Case</h2>
+         Nome: <!-- <span th:text="${case.nome}">Nome </span><br><br> -->
+         Descrizione: <!-- <span th:text="${case.descrizione}">Descrizione  </span><br><br> -->
+         Prezzo: <!-- <span th:text="${case.prezzo}">Prezzo </span> -->
+      </div>
+      <div id = "descComponente">
+        <h2>Componenti</h2>
+            Componente: <!-- <span th:text="${componente.tipologia}">Nome </span><br> -->
+      </div>
+      <div id = "descPeriferica">
+         <h2>Periferiche</h2>
+             Periferica: <!-- <span th:text="${periferica.nome}">Nome </span><br> -->
+      </div>
+    </div>
+<div id = "impostaComponenti">
+        <h3>Componenti</h3>
+        <div th:each="componente : ${ListaComponenti}">
+            Nome: <span th:text="${componente.nome}">Nome componente</span><br>
+            <span>
+                <a class = "button" th:href="@{'/buildComponente' + '/' + ${build.id} + '/' + ${componente.id}}"> Assegna componente</a><br><br>
+            </span>
+         </div>
+      </div>
+      <div id = "impostaPeriferiche">
+           <h3>Periferiche</h3>
+            <div th:each="periferica : ${ListaPeriferiche}">
+            Nome: <span th:text="${periferica.nome}">Nome periferica</span><br>
+            <span>
+                <a class = "button" th:href="@{'/buildPeriferica' + '/' + ${build.id} + '/' + ${periferica.id}}"> Assegna periferica</a><br><br>
+            </span>
+         </div>
+      </div>
+  </body>
+</html>

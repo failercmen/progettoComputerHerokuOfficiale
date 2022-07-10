@@ -1,0 +1,101 @@
+package com.example.demo.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.Componente;
+import com.example.demo.model.Periferica;
+import com.example.demo.repository.PerifericaRepository;
+
+@Service
+public class PerifericaService {
+
+	@Autowired
+	private PerifericaRepository perifericaRepository; 
+
+	@Transactional
+	public Periferica inserisci(Periferica p) {
+		return perifericaRepository.save(p);
+	}
+
+	@Transactional
+	public List<Periferica> tutti() {
+		return (List<Periferica>) perifericaRepository.findAll();
+	}
+
+	@Transactional
+	public Periferica perifericaPerId(Long id) {
+		Optional<Periferica> optional = perifericaRepository.findById(id);
+		if (optional.isPresent())
+			return optional.get();
+		else 
+			return null;
+	}
+
+	@Transactional
+	public boolean alreadyExists(Periferica p) {
+		List<Periferica> periferiche = this.perifericaRepository.findByNome(p.getNome());
+		if (periferiche.size() > 0)
+			return true;
+		else 
+			return false;
+	}
+
+
+	@Transactional
+	public void deleteById(Long id) {
+		perifericaRepository.deleteById(id);
+	}
+	
+	
+	@Transactional
+	public List<Periferica> displayComponenti() {
+		List<Periferica> listaPeriferica = this.tutti();
+
+		for (Periferica p : listaPeriferica) {
+			if (!p.getTipologia().equals("display"))
+				listaPeriferica.remove(p);
+		}
+		return listaPeriferica;
+	}
+	
+	
+	@Transactional
+	public List<Periferica> mouseComponenti() {
+		List<Periferica> listaPeriferica = this.tutti();
+
+		for (Periferica p : listaPeriferica) {
+			if (!p.getTipologia().equals("mouse"))
+				listaPeriferica.remove(p);
+		}
+		return listaPeriferica;
+	}
+	
+	@Transactional
+	public List<Periferica> tastiereComponenti() {
+		List<Periferica> listaPeriferica = this.tutti();
+
+		for (Periferica p : listaPeriferica) {
+			if (!p.getTipologia().equals("tastiera"))
+				listaPeriferica.remove(p);
+		}
+		return listaPeriferica;
+	}
+	
+	@Transactional
+	public List<Periferica> cuffieComponenti() {
+		List<Periferica> listaPeriferica = this.tutti();
+
+		for (Periferica p : listaPeriferica) {
+			if (!p.getTipologia().equals("cuffia"))
+				listaPeriferica.remove(p);
+		}
+		return listaPeriferica;
+	}
+
+}

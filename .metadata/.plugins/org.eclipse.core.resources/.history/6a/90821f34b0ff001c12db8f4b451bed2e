@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Catering</title>
+<link href="/css/perifericaForm.css" rel="stylesheet" type="text/css">
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+</style>
+</head>
+<body>
+	<header>
+		<a th:href="@{/admin/home}"><img src="/images/logo.png"></a>
+		<div class="titolo">
+			<h1>OFFLINESTORE</h1>
+		</div>
+		<div class="logout">
+			<p th:text="${#authentication.getPrincipal().getUsername()}"></p>
+			<a th:href="@{/logout}">Logout</a>
+		</div>
+	</header>
+	<div id="checkBox">
+		<form th:action="@{/admin/periferica}" method="POST"
+			th:object="${periferica}">
+			
+			<div id="box">
+				<h2>Inserisci i dati di una periferica</h2>
+				<div class="boxNome">
+					<span>Nome:</span> <span><input type="text"
+						th:field="${periferica.nome}" /> <span th:if="${#fields.hasErrors('nome')}"
+						th:errors="*{descrizione}" th:style="'color:red'"></span>
+				</div>
+				<div class="boxDesc">
+					<span>Descrizione:</span> <input type="text"
+						th:field="${periferica.descrizione}" /> 
+						<span th:if="${#fields.hasErrors('descrizione')}"
+						th:errors="*{descrizione}" th:style="'color:red'"></span>
+				</div>
+				<div class="boxTipo">
+					<span>Tipologia:</span> <span><input type="text"
+						th:field="*{tipologia}" /></span> <span
+						th:if="${#fields.hasErrors('tipologia')}" th:errors="*{tipologia}"></span>
+				</div>
+				<div class="boxPrezzo">
+					<span>Prezzo:</span> <span><input type="text"
+						th:field="*{prezzo}" /></span> <span
+						th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}"></span>
+				</div>
+				<div id="bottone">
+					<span><button type="submit">Aggiungi</button></span>
+				</div>
+			</div>
+		</form>
+	</div>
+		<footer>
+		<div>
+			<img
+				src="https://us.123rf.com/450wm/sdcrea/sdcrea1609/sdcrea160902427/63257603-musica-concept-design-con-l-auricolare-.jpg?ver=6">
+			<h3>Hai bisogno di supporto? Contattaci!</h3>
+		</div>
+		<div>
+			<h4>OfflineStore realizzato da:</h4>
+			Andrea Evangelista-Alessia Di Silvestre-Andrea Cipriani
+		</div>
+	</footer>
+</body>
+</html>

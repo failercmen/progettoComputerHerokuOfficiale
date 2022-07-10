@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="widht=device-widht, initial-scale=1">
+<title>Catering</title>
+<link href="/css/listaPeriferiche.css" rel="stylesheet"
+	type="text/css">
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+</style>
+<script></script>
+</head>
+<body>
+	<header>
+		<a th:href="@{/home}"><img src="/images/logo.png"></a>
+		<div class="titolo">
+			<h1>OFFLINESTORE</h1>
+		</div>
+		<div class="logout">
+			<p th:text="${#authentication.getPrincipal().getUsername()}"></p>
+			LOGOUT
+		</div>
+	</header>
+	<div class="centralBox">
+	
+	
+		<div class="periferica">
+			<h3>Display</h3>
+			<div th:if="${listaDisplay != null}" >
+				<div th:each="display : ${listaDisplay}">
+
+					<a class = "nome" href="Periferica.html"
+						th:href="@{'/periferica' + '/' + ${display.id}}"
+						th:text="${display.nome}">Nome Display</a>
+				</div>
+			</div>
+			<div th:unless="${listaDisplay}">Nessun display</div>
+		</div>
+ 
+		<div class="periferica">
+			<h3>Tastiere</h3>
+			<div th:if="${listaTastiere}">
+				<div th:each="tastiera : ${listaTastiere}">
+					<a class = "nome" href="periferica.html"
+						th:href="@{'/periferica' + '/' + ${tastiera.id}}"
+						th:text="${tastiera.nome}">Nome Tastiera</a>
+				</div>
+			</div>
+			<div th:unless="${listaTastiere}">Nessun display</div>
+		</div>
+	
+	<div class="periferica">
+		<h3>Mouse</h3>
+
+		<div th:each="mouse : ${listaMouse}">
+			<a class = "nome" href="periferica.html"
+				th:href="@{'/periferica' + '/' + ${mouse.id}}"
+				th:text="${mouse.nome}">Nome Mouse</a>
+		</div>
+	</div>
+
+	<div class="periferica">
+		<h3>Cuffie</h3>
+
+		<div th:each="cuffia : ${listaCuffie}">
+			<a class = "nome" href="periferica.html"
+				th:href="@{'/periferica' + '/' + ${cuffia.id}}"
+				th:text="${cuffia.nome}">Nome Cuffia</a>
+		</div>
+	</div>
+</div>
+
+	<footer>
+		<div>
+			<img
+				src="https://us.123rf.com/450wm/sdcrea/sdcrea1609/sdcrea160902427/63257603-musica-concept-design-con-l-auricolare-.jpg?ver=6">
+			<h3>Hai bisogno di supporto? Contattaci!</h3>
+		</div>
+		<div>
+			<h4>OfflineStore realizzato da:</h4>
+			Andrea Evangelista-Alessia Di Silvestre-Andrea Cipriani
+		</div>
+	</footer>
+</body>
+</html>

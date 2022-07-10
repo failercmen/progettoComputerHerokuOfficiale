@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Build</title>
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap')
+	;
+</style>
+<script></script>
+<link rel="stylesheet" href="/css/build.css">
+</head>
+<body>
+	<header>
+		<a th:href="@{/home}"><img src="/images/logo.png"></a>
+
+		<div class="titolo">
+			<h1>OFFLINESTORE</h1>
+		</div>
+		<div class="logout">
+			<p th:text="${#authentication.getPrincipal().getUsername()}"></p>
+			<a th:href="@{/logout}">Logout</a>
+		</div>
+	</header>
+	<div id="box">
+		<div id="descCase">							<!--nuovo......vedi se cancellare-->
+			<h2 th:text="${build.nome}"></a> <a th:href="@{'/updateBuild' + '/' + ${build.id} }"> <div>MODIFICA BUILD</div> </h2>
+			<h3>Prezzo totale:</h3>
+			<span th:text="${build.prezzoTotale}" ></span>
+		</div>
+		<div id = "descComponente">
+        <h2>Componenti</h2>
+            <span th:each="componente : ${Componenti}"> 
+            <span th:text="${componente.tipologia} + ':' ">Tipologia</span> 
+                <a class="pezzo" href="componente.html" th:href="@{'/componente' +'/' + ${componente.id} }" th:text="${componente.nome}">Nome componente</a> 
+                <a class="delete" th:href="@{'/deleteComponenteDaBuild' + '/' + ${build.id} + '/' + ${componente.id} }">Cancella<br></a>
+       		</span>
+      </div>
+      <div id = "descPeriferica">
+         <h2>Periferiche</h2>
+          <span th:each="periferica : ${Periferiche}">
+          	<span th:text="${periferica.tipologia} + ':' ">Tipologia</span> 
+          		<a class="pezzo" href="periferica.html" th:href="@{'/periferica' +'/' + ${periferica.id} }" th:text="${periferica.nome}">Nome componente</a> 
+          		<a class="delete" th:href="@{'/deletePerifericaDaBuild' + '/' + ${build.id} + '/' + ${periferica.id} }">Cancella<br></a>
+            </span>
+      </div>
+    </div>
+    <div id = "impostaBox">
+    <div class = "impostaComponenti">
+        <h3>Componenti</h3>        
+        <div th:each="componente : ${ListaComponenti}">
+            Nome: <span th:text="${componente.nome}">Nome componente</span><br>
+            <span>
+                <a class = "button" th:href="@{'/buildComponente' + '/' + ${build.id} + '/' + ${componente.id}}"> Assegna componente</a><br><br>
+            </span>
+         </div>
+      </div>
+      <div class = "impostaPeriferiche">
+           <h3>Periferiche</h3>
+            <div th:each="periferica : ${ListaPeriferiche}">
+            Nome: <span th:text="${periferica.nome}">Nome periferica</span><br>
+            <span>
+                <a class = "button" th:href="@{'/buildPeriferica' + '/' + ${build.id} + '/' + ${periferica.id}}"> Assegna periferica</a><br><br>
+            </span>
+         </div>
+      </div>
+    </div>  
+</body>
+</html>

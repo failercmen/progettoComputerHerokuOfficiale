@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Titolo Pagina</title>
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27')
+	;
+</style>
+<script></script>
+<link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+	<header>
+		<img src="/images/logo.png">
+
+		<div class="titolo">
+
+
+			<h1>OFFLINESTORE</h1>
+		</div>
+		<div class="logout">
+			<p th:text="${#authentication.getPrincipal().getUsername()}"></p>
+			<a th:href="@{/logout}">Logout</a>
+		</div>
+	</header>
+	<nav>
+		<span class="opzioni"><a
+			th:href="@{/admin/componenti}">Componenti</a></span> <span class="opzioni"><a
+			th:href="@{/admin/periferiche}">Periferiche</a></span>
+		<div class="dropdown">
+			<button class="dropbtn">Operazioni</button>
+			<div class="dropdown-content">
+				<a th:href="@{/admin/periferica}">Aggiungi periferica</a> <a
+					th:href="@{/admin/componente}">Aggiungi componente</a>
+			</div>
+		</div>
+	</nav>
+	<div class="fascia">
+		<div class="slogan">
+			<h2>SCOPRI LA MIGLIORE CONFIGURAZIONE PER TE, SCEGLIENDO TRA LA
+				VASTA SCELTA DI COMPONENTI DISPONIBILI!</h2>
+		</div>
+	</div>
+	<section>
+		<div class="flip-box">
+			<div class="flip-box-inner1">
+				<div class="flip-box-front1"></div>
+				<div class="flip-box-back1">
+					<h2>NZXT BUILD</h2>
+					<p>Fascia bassa</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-box">
+			<div class="flip-box-inner2">
+				<div class="flip-box-front2"></div>
+				<div class="flip-box-back2">
+					<h2>NZXT AIRFLOW BUILD </h2>
+					<p>Fascia alta</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-box">
+			<div class="flip-box-inner3">
+				<div class="flip-box-front3"></div>
+				<div class="flip-box-back3">
+					<h2>Back Side</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div>
+			<img
+				src="https://us.123rf.com/450wm/sdcrea/sdcrea1609/sdcrea160902427/63257603-musica-concept-design-con-l-auricolare-.jpg?ver=6">
+			<h3>Hai bisogno di supporto? Contattaci!</h3>
+		</div>
+		<div>
+			<h4>OfflineStore realizzato da:</h4>
+			Andrea Evangelista-Alessia Di Silvestre-Andrea Cipriani
+		</div>
+	</footer>
+</body>
+</html>

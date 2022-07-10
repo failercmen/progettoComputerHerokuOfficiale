@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Catering</title>
+	<link href="/css/perifericaForm.css" rel="stylesheet" type="text/css">
+  	<style>@import url('');</style>
+</head>
+<body>
+  <h2>Inserisci i dati di una periferica</h2>
+    <div id = "checkBox">
+    	<form th:action= "@{/admin/periferica}" method="POST" th:object="${periferica}">
+		<div id = "box">
+			<div class = "boxNome">
+				<span>Nome:</span> <span><input type="text" th:field="*{nome}" /></span>
+			</div>
+			<div class = "boxDesc">
+				<span>Descrizione:</span> <span><input type="text" th:field="*{descrizione}" /></span>
+				<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
+			</div>
+			<div class = "boxTipo">
+				<span>Tipologia:</span> <span><input type="text" th:field="*{tipologia}" /></span>
+				<span th:if="${#fields.hasErrors('tipologia')}" th:errors="*{tipologia}"></span>
+			</div>
+			<div class = "boxPrezzo">
+				<span>Prezzo:</span> <span><input type="text" th:field="*{prezzo}" /></span>
+				<span th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}"></span>
+			</div>
+			<div id = "bottone">
+				<span><button type="submit">Aggiungi</button></span>
+			</div>
+          </div>
+		</form>
+     </div>
+     <div id="footer_bar">
+         Torna alla home
+    </div>
+</body>
+</html>

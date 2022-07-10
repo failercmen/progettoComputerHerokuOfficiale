@@ -1,0 +1,92 @@
+package com.example.demo.controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.example.demo.controller.validator.PerifericaValidator;
+import com.example.demo.model.Periferica;
+import com.example.demo.service.BuildPCService;
+import com.example.demo.service.PerifericaService;
+
+
+
+@Controller
+public class PerifericaController {
+	
+	@Autowired
+	private PerifericaService perifericaService;
+	
+    @Autowired
+    private PerifericaValidator perifericaValidator;
+    
+    
+    @RequestMapping(value = "/periferiche", method = RequestMethod.GET)
+    public String getListaPeriferiche(Model model) {
+    		model.addAttribute("listaPeriferiche", this.perifericaService.tutti());
+    		
+    		model.addAttribute("listaDisplay",this.perifericaService.displayPeriferiche());
+    		model.addAttribute("listaCuffie",this.perifericaService.cuffiePeriferiche());
+    		model.addAttribute("listaMouse",this.perifericaService.mousePeriferiche());
+    		model.addAttribute("listaTastiere",this.perifericaService.tastierePeriferiche());
+    		model.addAttribute("listaExtra",this.perifericaService.extraPeriferiche());
+    		return "listaPeriferiche.html";
+    }
+    
+
+    
+    @RequestMapping(value = "/admin/periferiche", method = RequestMethod.GET)
+    public String getListaPerifericheAdmin(Model model) {
+//    		model.addAttribute("listaPeriferiche", this.perifericaService.tutti());
+    		
+    		model.addAttribute("listaDisplay",this.perifericaService.displayPeriferiche());
+    		model.addAttribute("listaCuffie",this.perifericaService.cuffiePeriferiche());
+    		model.addAttribute("listaMouse",this.perifericaService.mousePeriferiche());
+    		model.addAttribute("listaTastiere",this.perifericaService.tastierePeriferiche());
+    		model.addAttribute("listaExtra",this.perifericaService.extraPeriferiche());
+    		
+    		return "admin/listaPeriferiche.html";
+    }
+   
+    
+    
+    
+    @RequestMapping(value = "/admin/periferica", method = RequestMethod.GET)
+    public String addPeriferica(Model model) {
+    	model.addAttribute("periferica", new Periferica());
+        return "admin/perifericaForm.html";
+    }
+    
+    @RequestMapping(value = "/admin/periferica", method = RequestMethod.POST)
+    public String addPeriferica(@ModelAttribute("periferica") Periferica periferica, Model model, BindingResult bindingResult) {
+    	this.perifericaValidator.validate(periferica, bindingResult);
+        if (!bindingResult.hasErrors()) {
+        	this.perifericaService.inserisci(periferica);
+//            model.addAttribute("listaPeriferiche", this.perifericaService.tutti());
+        	model.addAttribute("listaDisplay",this.perifericaService.displayPeriferiche());
+    		model.addAttribute("listaCuffie",this.perifericaService.cuffiePeriferiche());
+    		model.addAttribute("listaMouse",this.perifericaService.mousePeriferiche());
+    		model.addAttribute("listaTastiere",this.perifericaService.tastierePeriferiche());
+    		model.addAttribute("listaExtra",this.perifericaService.extraPeriferiche());
+            return "admin/listaPeriferiche.html";
+        }
+    	model.addAttribute("listaDisplay",this.perifericaService.displayPeriferiche());
+		model.addAttribute("listaCuffie",this.perifericaService.cuffiePeriferiche());
+		model.addAttribute("listaMouse",this.perifericaService.mousePeriferiche());
+		model.addAttribute("listaTastiere",this.perifericaService.tastierePeriferiche());
+		model.addAttribute("listaExtra",this.perifericaService.extraPeriferiche());
+        return "admin/perifericaForm.html";
+    }
+    
+    @RequestMapping(value = "/periferica/{id}", method = RequestMethod.GET)
+    public String getChef(@PathVariable("id") Long id, Model model) {
+    	model.addAttribute("periferica", this.perifericaService.perifericaPerId(id));
+    	return "Periferica.html";
+    }
+}

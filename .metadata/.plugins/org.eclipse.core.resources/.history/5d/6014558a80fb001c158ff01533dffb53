@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>chef Form</title>
+<link rel="stylesheet" href="/css/genericForm.css" type="text/css" />
+</head>
+<body>
+
+	
+		<h2>Inserisci i dati di un componente</h2>
+	
+
+
+	<div id="tutto">
+
+		<div id="containerDati">
+
+
+			<form th:action="@{/admin/componente}" method="POST" th:object="${componente}">
+
+				<div>
+					<div>
+						<span>Nome:<input type="text"
+							th:field="*{nome}" /></span>
+
+					</div>
+					<div>
+						<span>descrizione:<input type="text"
+							th:field="*{descrizione}" /></span>
+
+					</div>
+
+					<div>
+						<span>Prezzo:<input type="number"
+							th:field="*{prezzo}" /></span>
+					</div>
+
+					<div>
+						<span><button type="submit">Conferma Componente</button></span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	<hr>
+
+	<footer>
+		<a th:href="@{/admin/home}">Home Amministratore</a>
+
+
+	</footer>
+	
+
+</body>
+</html>

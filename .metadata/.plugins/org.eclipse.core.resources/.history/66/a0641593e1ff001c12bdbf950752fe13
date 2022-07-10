@@ -1,0 +1,30 @@
+
+#
+required.utente.nome=Il nome e' un campo obbligatorio
+required.utente.cognome=Il cognome e' un campo obbligatorio
+required.credenziali.username=Username e' un campo obbligatorio
+required.credenziali.password=Password e' un campo obbligatorio
+required.buildPC.nome=Nome della Build e' un campo obbligatorio
+required.buildPC.descrizione=Descrizione della Build e' un campo obbligatorio
+required.componente.nome=Nome del componente e' un campo obbligatorio
+required.componente.descrizione=Descrizione del componente e' un campo obbligatorio
+required.componente.tipologia=Tipologia del componente e' un campo obbligatorio
+required.periferica.nome=Nome della periferica e' un campo obbligatorio
+required.periferica.descrizione=Descrizione della periferica e' un campo obbligatorio
+size.utente.nome= minimo 2 e massimo 100 caratteri
+size.utente.cognome= minimo 2 e massimo 100 caratteri
+size.credenziali.username= minimo 4 e massimo 20 caratteri
+size.credenziali.password= minimo 6 e massimo 20 caratteri
+size.buildPC.nome=minimo 2 e massimo 30 caratteri
+size.buildPC.descrizione= minimo 2 e massimo 500 caratteri
+size.componente.nome=minimo 2 e massimo 50 caratteri
+size.componente.descrizione= minimo 2 e massimo 500 caratteri
+size.componente.tipologia=minimo 2 e massimo 50 caratteri
+
+size.periferica.nome=minimo 2 e massimo 50 caratteri
+size.periferica.descrizione=minimo 2 e massimo 500
+
+duplicate.credenziali.username=Questo username esiste gia'
+duplicate.buildPC.nome=Questa build esiste gia'
+duplicate.componente.nome=Questo componente esiste gia'
+duplicate.periferica.nome=Questa periferica esiste gia'

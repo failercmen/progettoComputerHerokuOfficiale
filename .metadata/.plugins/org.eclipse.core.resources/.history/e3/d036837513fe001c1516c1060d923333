@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Index</title>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cairo:wght@300;400;500&family=Orbitron&family=Share+Tech&family=Smooch&family=Varela+Round&display=swap%27');</style>
+    <link href="/css/index.css" rel="stylesheet" type="text/css"> 
+  </head>
+  <body>
+    <p>
+      Benvenuto, qui potrai assemblare il tuo pc<br> e creare il setup che hai sempre desiderato.<br>
+      Ma prima devi accedere o se gia' non l'hai fatto, registrati!
+    </p>
+
+    <div id = "accedi">
+      <a th:href="@{/login}"><button type = button>Accedi</button></a> 
+    </div>
+
+    <div id = "registrati">
+      <a th:href="@{/register}"><button type = button>Registrati</button></a>
+	</div>    
+    
+  </body>
+</html>
