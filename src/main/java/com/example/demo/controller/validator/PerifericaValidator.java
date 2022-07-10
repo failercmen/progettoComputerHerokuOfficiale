@@ -25,7 +25,7 @@ public class PerifericaValidator implements Validator {
 		Periferica p = (Periferica) o;
 		String nome = p.getNome().trim();
 		String desc = p.getDescrizione().trim();
-		String tip = p.getTipologia().trim();
+		String tip = p.getTipologia();
 
 		if (nome.isEmpty())
 			errors.rejectValue("nome", "required");
@@ -44,8 +44,8 @@ public class PerifericaValidator implements Validator {
 			errors.rejectValue("nome" ,"duplicate");
 		
 		//nuovo
-		else if( !tip.equals("display") || !tip.equals("tastiera") || !tip.equals("mouse")
-			||	!tip.equals("cuffia") )
+		else if( !tip.equals("display") && !tip.equals("tastiera") && !tip.equals("mouse")
+			&&	!tip.equals("cuffia") )
 			errors.rejectValue("tipologia", "inesistente");
 	}
 		
